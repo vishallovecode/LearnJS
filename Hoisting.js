@@ -93,3 +93,4 @@ const check = function checkKnowledge() {
 
 // syntax is diff
 // both are alocated memroy diffrerentl at the compliation
+// function declaration and statement are same but function expression is diff
