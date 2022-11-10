@@ -75,3 +75,21 @@ var abc = 40;
 // call();
 
 // console.log(a); // 30
+// declaration
+console.log(checkKnowledge); // whole function
+console.log(checkKnowledge()); // hey , undefined
+
+function checkKnowledge() {
+  console.log("Hey");
+  //   return undefined  by deafult
+}
+
+console.log(check); // undefined
+console.log(check()); // undefined it not a function
+// expression
+const check = function checkKnowledge() {
+  console.log("Hey");
+};
+
+// syntax is diff
+// both are alocated memroy diffrerentl at the compliation
