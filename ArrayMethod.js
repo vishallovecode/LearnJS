@@ -158,6 +158,11 @@ message = `Hey ${names} Your Kra is pending`;
  console.log(message)
 
 
+
+
+
+ const isExist = employees.includes("rahul");
+ console.log(isExist)
  
 
 
