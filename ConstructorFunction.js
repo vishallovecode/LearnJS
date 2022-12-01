@@ -60,15 +60,13 @@ let boolean = new Boolean(true); // let check = true
 
 
 
+const employeeArrow = ()=> {
+     this.name = "Hello";
+     console.log(this)
+}
 
 
-
-
-
-
-
-
-
-
+const emparrow =  new employeeArrow(); // this line will throw error because here employeeArrow will not work as the constructor function 
+console.log(emparrow)
 
 
