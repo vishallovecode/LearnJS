@@ -1,8 +1,9 @@
 
 
-const employee =  [{name: "ABC" , lastName: "XYZ"},
- {name: "ABC1" , lastName: "XYZ1"},{name: "ABC2" , lastName: "XYZ2"},
- {name: "ABC3" , lastName: "XYZ3"}];
+const employee = [{ name: "ABC", lastName: "XYZ" },
+{ name: "ABC1", lastName: "XYZ1" }, { name: "ABC2", lastName: "XYZ2" },
+{ name: "ABC3", lastName: "XYZ3" }];
+//vs
 
 
 // YOU NEED TO ADD  =>
@@ -16,19 +17,19 @@ const dataArray = [50000, 30000, 80000, 45000];
 
 // 2.You need to return the emloyee whi the salary is greater than equal to 50000
 
-const updatedEmployee = employee.map((item, index)=>{
+const updatedEmployee = employee.map((item, index) => {
 
-return {
-    ...item, 
-    salary: dataArray[index]
-}
+    return {
+        ...item,
+        salary: dataArray[index]
+    }
 });
 console.log(updatedEmployee);
 console.log(employee);
 
 
-const updatedFilter = updatedEmployee.filter((item , index)=>{
-    return item.salary>=50000
+const updatedFilter = updatedEmployee.filter((item, index) => {
+    return item.salary >= 50000
 })
 
 
@@ -62,8 +63,8 @@ console.log(updatedEmployee)
 // // }
 
 
- // find the maximum salary 
- //  sum of all the salary 
+// find the maximum salary 
+//  sum of all the salary 
 
 //  // [1, 1, 1,1,1,2,2,2,3,3,3,4,4,4,5,5,5]
 
@@ -90,10 +91,10 @@ let max = 0;
 // }
 
 
-updatedEmployee.forEach(elem=> {
+updatedEmployee.forEach(elem => {
     console.log(elem.salary)
-    if(elem.salary>max) {
-        max= elem.salary
+    if (elem.salary > max) {
+        max = elem.salary
     }
 })
 
@@ -119,7 +120,7 @@ console.log(max);
 // console.log('Reduce Sume' ,totaLSum)
 
 
-const data =  [1, 1, 1,1,1,2,2,2,3,3,3,4,4,4,5,5,5];
+const data = [1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5];
 
 
 //  {
@@ -130,20 +131,20 @@ const data =  [1, 1, 1,1,1,2,2,2,3,3,3,4,4,4,5,5,5];
 //     5:3
 //  }
 const initialValue = {};
-const object =data.reduce((acc , curr , index)=>{
+const object = data.reduce((acc, curr, index) => {
     console.log(acc)
-    if(curr in acc) {
+    if (curr in acc) {
         acc[curr]++;
     } else {
-         acc[curr] =1
+        acc[curr] = 1
     }
-return acc;
-} , initialValue)
+    return acc;
+}, initialValue)
 
-console.log(object , 'hey')
+console.log(object, 'hey')
 
 
-// if you want to check key exist into the object or not use 
+// if you want to check key exist into the object or not use
 
 // Object.hasOwnProperty(key);=> true if key exist in Object else false
 // key in object => this will give true if key exist in object
