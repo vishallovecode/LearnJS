@@ -1,5 +1,5 @@
 // First Line Code
-console.log("My Firs Code in Javascript");
+// console.log("My Firs Code in Javascript");
 
 // My First Variable (Container)
 
@@ -72,3 +72,10 @@ console.log(typeof pincode1);
 
 // convert decimal into the integer or number
 console.log(parseInt(1234.555));
+
+// constant in javascript
+
+// If you want to declare any variable as constant there is keyword called const for declaring the varaible
+
+const name1 = "Vishal";
+name1 = "Vishal"; //  this will throw error because you cannot reaasign the const variable
