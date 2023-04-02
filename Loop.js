@@ -26,8 +26,8 @@ for (let obj in object) {
   console.log(obj); // this will give the key as answer
 }
 
-// for (let ele of object) {
-//   console.log(ele); // this will give the key as answer
-// } => this is will throw the error
+for (let ele of object) {
+  console.log(ele); // this will give the key as answer
+}
 
 // for of loop is not applicable for the object

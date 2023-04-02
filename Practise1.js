@@ -121,7 +121,6 @@ console.log(max);
 
 const data =  [1, 1, 1,1,1,2,2,2,3,3,3,4,4,4,5,5,5];
 
-
 //  {
 //     1:5,
 //     2:3,
@@ -156,3 +155,7 @@ console.log(object , 'hey')
 
 
 
+
+
+
+// call bind and apply 

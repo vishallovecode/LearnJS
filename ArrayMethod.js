@@ -141,11 +141,6 @@ data.lastName = "Sharma"
    })
 
 
-
-
-
-
-  
    const employees = ["Vishal" , "ARYAN" ,"rahul" , 'ram'];
    const names = employees.join(",");
    console.log(names);
@@ -158,11 +153,28 @@ message = `Hey ${names} Your Kra is pending`;
  console.log(message)
 
 
-
+ // includes 
 
 
  const isExist = employees.includes("rahul");
  console.log(isExist)
+
+
+ 
+
+ const curry = (a)=> {
+   return (b)=>{
+      return (c)=>{
+        return a+b+c;
+      }
+   }
+ }
+
+
+ curry(20)(30)(40);
+ 
+
+
  
 
 

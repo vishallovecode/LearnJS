@@ -85,6 +85,51 @@ function flattenArr(arr, res) {
 
 
 
+const testArray = [23 ,45 ,67 , 89 , 100 , 5 , 10 , 20];
+
+
+
+
+
+// 5 minutes => 10 minutes
+// const result = { 
+//   '100': '100 is even' ,
+//   '10':  '10 is Even',
+//   '20': '20 is even'
+// }
+
+// [{'100': '100 is even'} ,{'10':  '10 is Even'} , {'20': '20 is even'}]
+
+
+
+
+const  modifyObject=()=> {
+  const result  = {};
+  testArray.forEach((item  , index)=>{
+    if(item%2==0) {
+      result[item] = `${item} is even`
+    }
+    })
+    return result;
+}
+console.log(modifyObject(testArray))
+
+const modifiedArray = testArray.filter((item)=>{
+return item%2==0;
+}).map((item)=>{
+  return {
+    item: `${item} is even`
+  }
+})
+console.log(modifiedArray)
+
+
+
+
+
+
+
+
 
   
 

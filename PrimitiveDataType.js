@@ -9,7 +9,7 @@
 // Symbol => this is newly added features some browser may does support this
 
 var data = null;
-var data1; // undefined browser provide it by default
+var data1; // undefined
 var data3 = undefined;
 
 console.log(typeof data); //  object // this is called pitfalls and big error in JS
@@ -17,18 +17,11 @@ console.log(typeof data1); //  undefined
 console.log(typeof data3); //  undefined
 
 // String Data Type
-//concatination
-var a=11 // type of a is number
-var b='22' // type of b is string
-var c=a+b // c=1122 type of c will be string
-var d=33;
-var e=a+b+c; // c=112233 type of c will be string
-// but if we do e=a+c+b then e=4422 type of e will be string
 // anything b/w the single quoted and double quoted is string in js
 
 var example1 = "";
 console.log(typeof example1); // string
-example1 = " ";
+example1 = "";
 console.log(typeof example1); // string
 example1 = "1234";
 console.log(typeof example1); // string
@@ -48,8 +41,8 @@ console.log(isValueExist);
 var exampl3 = " Vishal Sharma  ";
 console.log("hello2" + exampl3 + "Hello"); // hello2 Vishal Sharma  Hello
 console.log("hello2" + exampl3.trim() + "Hello"); // hello2Vishal SharmaHello
+
 // trimEnd => it will remove extraa space from the end
-console.log("hello2 "+exampl2+"how are you")// trimEnd =>hello2Vishal Sharma  "it will remove extraa space from the end"
 // trimStart => it will remove extraa space from the start
 
 // charAt => it give you the specific  string for specific index indexing will start with zero
@@ -70,11 +63,7 @@ console.log(exampl5.replaceAll("e", "a")); // Enginaaring
 
 var splitExample = "Hello";
 let array = splitExample.split("");
-console.log(array); // (5) ['H', 'e', 'l', 'l', 'o'
-// reverse
-let arr=array.reverse(); // ['o','l','l','e','h'];
-// join()
-array.join(''); // "hello"
+console.log(array); // (5) ['H', 'e', 'l', 'l', 'o']
 
 // slice and splice they are really important  => Array
 
@@ -127,4 +116,4 @@ console.log(!true); // false
 console.log(!0); // true
 console.log(!1); // true // same thing for ths string
 
-1 ? console.log("Hey111") : console.log("Hey111"); // ternary operator 
+1 ? console.log("Hey111") : console.log("Hey111"); // ternary operator

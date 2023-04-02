@@ -79,4 +79,3 @@ console.log(parseInt(1234.555));
 
 const name1 = "Vishal";
 name1 = "Vishal"; //  this will throw error because you cannot reaasign the const variable
-

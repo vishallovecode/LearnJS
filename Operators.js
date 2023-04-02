@@ -154,31 +154,23 @@ console.log(isNaN(123 + undefined)); // false
 // Type coersion
 // explicitly , implicitly
 
-
 //dynamically converting one type into another type is called the type coersion
 
 // explicit  => type casting => it is done by the developer
 
 // conversion  => to string , to boolean  and to Number
 
+// to string
 
-// to string  
+const data = String(123);
 
-const data  = String(123);
+const datab = Boolean(123); // true
+const datab1 = Boolean(0); // false
+const datab3 = Number("123");
 
-const datab= Boolean(123)  ; // true
-const datab1= Boolean(0)  ; // false
-const datab3 = Number("123")
+// !"vishal" => false
+// "vishal" &&  "name" =>  boolean  => true
 
- // !"vishal" => false
- // "vishal" &&  "name" =>  boolean  => true
-
- // parseInt
- // parseFloat  
- //
-
- 
-
-
-
- 
+// parseInt
+// parseFloat
+//
