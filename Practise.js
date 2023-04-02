@@ -2,12 +2,12 @@ let a = 50;
 var b = 40;
 {
   console.log(b);
-  //   console.log(a); // tdz // 50
+    console.log(a); 
   var b = 90;
   let a = 200;
   function call() {
-    // console.log(b); // tdz
-    console.log(a); // undefined
+    console.log(b); 
+    console.log(a); 
     let b = 55;
     var a = 65;
     console.log(a);
