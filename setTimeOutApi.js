@@ -96,6 +96,7 @@ form.insertBefore(inputNode, inputElem2)
 
 const inputNode1  =  document.createElement('input');
 inputNode1.id = "inputLast"
+
 inputNode1.placeholder= 'Please type your last NAME...'
 inputNode1.style.padding = "20px"
 inputNode1.style.margin = "20px"
@@ -132,3 +133,30 @@ buttonElement.onclick = ()=> {
 
 
 // Selectors    
+
+// Selecting element from dom using id  
+const spanElem  = document.createElement('span');
+spanElem.className = "SpanCheck"
+spanElem.innerText= "ClassName check"
+form.appendChild(spanElem)
+console.log('Selecting through id' ,document.getElementById('inputLast'));
+console.log('Selecting through tagName' ,document.getElementsByTagName('form'))
+console.log('Selecting through tagName' ,document.getElementsByTagName('input'))
+console.log('Selecting through className' ,document.getElementsByClassName('SpanCheck'))
+
+console.log('Selecting through querySelector' ,document.querySelector('input'))
+console.log('Selecting through querySelectorAll' ,document.querySelectorAll('input'))
+
+console.log('Selecting through querySelector' ,document.querySelector('#inputLast'))
+console.log('Selecting through querySelector' ,document.querySelector('.SpanCheck'))
+
+// removing the element
+button2.remove();
+
+// Dom Events  
+// Event bubbling 
+// event capturing 
+// event propagation 
+// event delegation
+// event preventDefault
+
