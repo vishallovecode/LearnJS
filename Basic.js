@@ -136,12 +136,9 @@ console.log("Requesting  evryone to code parallel")
 console.log(typeof c)
 
 console.log(1/0); // Infinity  => NaN isNaN();
-console.log(typeof 1/0);
+console.log(typeof 1/0);  // => NAN
 
-
-console.log(typeof Infinity , 'hey')
-
-
+console.log(typeof Infinity , 'hey')    //number
 
 // Primitive Datatype
 //  string , number , boolean  , undefined  , null  ,  ,     =>>> Symbol ,BigInt ()
