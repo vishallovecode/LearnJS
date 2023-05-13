@@ -155,3 +155,5 @@ curry(20)(30)(40);
 //All the arrays method are really but map , filter , reduce , slie ,
 // splice , join  , substring ,
 // indexOf , forEach are of the most important method of Js
+
+// The polyfill of the reduce , map  and filter are one of the most asked interview questions
