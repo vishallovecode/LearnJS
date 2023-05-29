@@ -1,10 +1,8 @@
-
-// // we use both keyword simultaneoulsy 
+// // we use both keyword simultaneoulsy
 // // means withour using async you cannot use await
-// // using async keyword we can make function as asynchronous function 
+// // using async keyword we can make function as asynchronous function
 // // the functon which is using  the async keywoord that will always return the promises
 // // we can avoid promises chaining with the async and await combination (somehow)
-
 
 // const fetchPost = async ()=> {
 // return 0;
@@ -21,7 +19,6 @@
 // // fetchData2().then((res1)=>{
 // //     console.log('fetchData2' , res1)
 // // })
-
 
 // // const resolvedData= async()=> {
 // //     const data  =  await fetchData2();
@@ -49,7 +46,7 @@
 // }
 // fetchPostData();
 
-//  1. 
+//  1.
 // console.log("HGey")
 // const data = Promise.reject("Hey i am rejected"); //
 // console.log(data) //Promise {<rejected>: 'Hey i am rejected'}
@@ -62,35 +59,33 @@
 
 // 2.
 // async function getData() {
-//     console.log(await  Promise.resolve('I made it!')) // I made it. 
+//     console.log(await  Promise.resolve('I made it!')) // I made it.
 //     return await Promise.resolve('I made it!');
 // }
 // const data = getData();
 // console.log(data);   //Promise {<pending>}
 
-
 // 3.
-// const myPromise = () => Promise.resolve('I have resolved!');
+const myPromise = () => Promise.resolve("I have resolved!");
 
-// function firstFunction() {
-//     myPromise().then(res => console.log('1', res)); // async
-//     console.log('second'); // sync  second =>1
-// }
+function firstFunction() {
+  myPromise().then((res) => console.log("1", res)); // async
+  console.log("second"); // sync  second =>1
+}
 
-// async function secondFunction() {
-//     console.log(await myPromise());
-//     console.log('second1');
-// }
+async function secondFunction() {
+  console.log(await myPromise());
+  console.log("second1");
+}
 
-// firstFunction();
-// secondFunction();
+firstFunction();
+secondFunction();
 
 // sequence of output
 // 1. second ,
 // 2. 1  I have resolved
 // 3. I have esolved
 // 4.  second1
-
 
 // 4.
 // Promise.resolve(5);
@@ -107,10 +102,6 @@
 //  1. start
 // 2 .will i print
 // 3. end
-
-
-
-
 
 // console.log('start');
 
@@ -129,8 +120,6 @@
 // console.log('end');
 
 // start 1 4 end 2 14 => correct
-
-
 
 // 6.
 // console.log('start');
@@ -161,7 +150,6 @@
 
 // start 1 end 2
 
-
 // console.log('start')
 
 // const fn = () => (new Promise((resolve, reject) => {
@@ -178,8 +166,6 @@
 // console.log('end')
 // // start   , middle  , 1  , end  , success
 
-
-
 // console.log('start')
 
 // Promise.resolve(1).then((res) => {
@@ -193,8 +179,6 @@
 // console.log('end')
 // // start , end  , 2
 
-
-
 // console.log('start')
 
 // setTimeout(() => {
@@ -207,11 +191,6 @@
 
 // console.log('end')
 
-
-
-
-
-
 // const promise = new Promise((resolve, reject) => {
 //     console.log(1);
 //     setTimeout(() => {
@@ -221,25 +200,23 @@
 //     }, 0);
 //     console.log(2);
 //   });
-  
+
 //   promise.then((res) => {
-//     console.log(res); 
+//     console.log(res);
 //   });
 
 //   setTimeout(()=>{
 //     console.log("Are!!")
 //   } ,0)
-  
-//   console.log(4);
 
+//   console.log(4);
 
 // 2
 // 4
 // timerStart
 // timerEnd
 // success
-// 230 
-
+// 230
 
 // const promise = new Promise((resolve, reject) => {
 //     console.log(1);
@@ -250,7 +227,7 @@
 //     }, 10);
 //     console.log(2);
 //   });
-  
+
 //   promise.then((res) => {
 //     console.log(res);
 //   });
@@ -258,7 +235,7 @@
 //   setTimeout(()=>{
 //     console.log("Are!!")
 //   } ,0)
-  
+
 //   console.log(4);
 
 // const timer1 = setTimeout(() => {
@@ -267,12 +244,10 @@
 //       console.log('promise1')
 //     })
 //   }, 0)
-  
+
 //   const timer2 = setTimeout(() => {
 //     console.log('timer2')
 //   }, 0)
-
-
 
 // console.log('start');
 
@@ -292,5 +267,28 @@
 
 // console.log('end');
 
+console.log("start");
+setTimeout(() => {
+  console.log("setTimeout");
+}, 0);
+Promise.resolve().then(() => {
+  console.log("resolve");
+});
+console.log("end");
+const promise = new Promise((resolve, reject) => {
+  console.log(1);
+  setTimeout(() => {
+    console.log("timerStart");
+    resolve("success"); //
+    console.log("timerEnd");
+  }, 0);
 
-
+  console.log(2);
+});
+promise.then((res) => {
+  console.log(res);
+});
+setTimeout(() => {
+  console.log("Are!!");
+}, 0);
+console.log(4);
