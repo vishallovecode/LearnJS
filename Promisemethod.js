@@ -268,7 +268,7 @@ const promiseallpolyfill = (promises) => {
             }
           })
           .catch((error) => {
-            rejected(error);
+            result.push(error);
           });
       } else {
         result.push(promise);
@@ -292,3 +292,9 @@ promiseallpolyfill([p1s, ps, "hey"])
   .catch((error) => {
     console.log("error", error);
   });
+
+// promise chaining
+// some of questions on promise
+// async and await why and when  ??
+// will  create own function for allStelled , any , race
+// Assignment
