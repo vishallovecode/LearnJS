@@ -270,9 +270,6 @@ const promiseallpolyfill = (promises) => {
           .catch((error) => {
             result.push(error);
           });
-      } else {
-        result.push(promise);
-        count++;
       }
     });
   });

@@ -125,3 +125,65 @@ console.log("filteredData", filteredData); //
 // console.log("minimizedData", minimizedData); //
 
 // filter ??
+
+// bind ??
+// function securityProvider(...name) {
+//   console.log(this); // context
+//   console.log(name); //
+// }
+
+// const security1 = securityProvider.bind(
+//   { grandFather: "Rim Rom" },
+//   "Ram",
+//   "tikor"
+// );
+
+// const security2 = securityProvider.bind({ pet: "peti reti" }, "Tek", "pikor");
+
+// security1("XYZ", 123, 456); //  []
+// security2("ABC");
+
+// //  my bind
+
+// Function.prototype.mybind = function (obj, ...args) {
+//   // this that will be the function which is using mybind or function before dot
+//   const copyObject = { ...obj }; // deep copy
+//   copyObject.func = this;
+//   return (...arg2) => {
+//     const arg = [...args, ...arg2];
+//     return copyObject.func(arg);
+//   };
+// };
+
+// var security222 = securityProvider.mybind({ pet: "peti reti" }, "Tek", "pikor");
+
+// // security1("XYZ", 123, 456); //  []
+
+// security222("security222", "ABC");
+
+// what is the diffrenece b/w forEach and map ??
+var b = 50;
+
+function callMeRelax() {
+  const a = (b = c = d = e = f = 50);
+  tit = "name";
+  console.log(a, b, c, d, e, f); // 50 ,50 ,50 ,50,50,50
+}
+callMeRelax();
+console.log(tit);
+console.log(b, c, d, e, f);
+
+console.log(a, b, c, d, e, f); // ??
+
+// tit ='Tname';
+var tit = "Tname";
+
+// what is type coersion ??
+// what is type casting
+// what is function expression and function statement in term hositing?
+// what is scope  and scope chainign ??
+// what is lexical environment?
+
+// what is memoization and write the function for memoizing value ?
+const data1213 = `{} , {} , {} , {}`;
+const array12e = data1213.split();

@@ -1,178 +1,148 @@
+// // // // let name = "Vishal";
+// // // // let lastName = "Sharme"
 
+// // // //  let obj = {name , lastName}   //=> {name: name,  lastName: lastName}
+// // // //   console.log(obj)
 
-// // let name = "Vishal";
-// // let lastName = "Sharme"
+// // // // settimeout sets this = window  for the function call //
 
-// //  let obj = {name , lastName}   //=> {name: name,  lastName: lastName}
-// //   console.log(obj)
+// // // window.college = "XYZ college"
 
-// // settimeout sets this = window  for the function call //
+// // // const employee = {
+// // //     name: "Vishal",
+// // //     printName(a, b, c) {
+// // //         // if we call this function from line no 22 this == employe
+// // //         // if we call function from line no 28 this==window
+// // //         console.log("Hey" , 'name= ', this.name, this.college);
+// // //         console.log('checking,.,,' ,  this==employee );
+// // //         console.log(a,b,c)
+// // //     }
+// // // }
 
-// window.college = "XYZ college"
+// // // // employee.printName(); // . hey vishal normal behaviour
 
-// const employee = {
-//     name: "Vishal",
-//     printName(a, b, c) { 
-//         // if we call this function from line no 22 this == employe
-//         // if we call function from line no 28 this==window
-//         console.log("Hey" , 'name= ', this.name, this.college);
-//         console.log('checking,.,,' ,  this==employee );
-//         console.log(a,b,c)
-//     }
-// }
+// // // // loosing this context
+// // // // setTimeout(employee.printName , 1000); // this => window
 
-// // employee.printName(); // . hey vishal normal behaviour
+// // // // const functionTimeOut = ()=> {
+// // // //     console.log('inside the setimout first function' ,this==window) // true
+// // // //     employee.printName();// this == employee
+// // // // }
 
+// // // // // wrapped this with one closure
+// // // // setTimeout(functionTimeOut, 1000);
 
+// // // // bind
 
-// // loosing this context
-// // setTimeout(employee.printName , 1000); // this => window
+// const printNameRef = employee.printName.bind(employee, 45, 67, 89);
 
-// // const functionTimeOut = ()=> {
-// //     console.log('inside the setimout first function' ,this==window) // true
-// //     employee.printName();// this == employee
-// // }
-
-// // // wrapped this with one closure
-// // setTimeout(functionTimeOut, 1000);
-
-
-// // bind 
-
-// const printNameRef = employee.printName.bind(employee , 45 , 67  ,89);
-
-// // in the bind function first is context or this and rest are the  parameter to be passed into the function which we are 
-// // binding in this cas printName 
-// setTimeout(printNameRef , 1000);
+// // in the bind function first is context or this and rest are the  parameter to be passed into the function which we are
+// //  binding in this cas printName
+// setTimeout(printNameRef, 1000);
 // // console.log('here this is behaving like window object',this==window)
 
+// const employee_111 = {
+//   name: "Ashish Rajpoot",
+//   college: "Naughty College",
+//   nickName: "Naughty",
+//   printFullName() {
+//     console.log(this.name);
+//   },
+//   printNickName() {
+//     console.log(this.nickName);
+//   },
+// };
 
+// const employee_23 = {
+//   name: "Simita",
+//   college: "VSSD COLLEGE",
+//   nickName: "simi",
+// };
 
-// const employee_1 = {
-// name: "Ashish Rajpoot",
-// college: "Naughty College",
-// nickName: "Naughty",
-// printFullName() {
-//     console.log(this.name)
-// },
-// printNickName(){
-//     console.log(this.nickName)
-// }
-// }
+// const employee_333 = {
+//   name: "Chandan",
+//   college: "XYZ",
+//   nickName: "Chandu",
+// };
 
-// const employee_2 = {
-//     name: "Simita",
-//     college: "VSSD COLLEGE",
-//     nickName: "simi"
-//     }
-
-//     const employee_3 = {
-//         name: "Chandan",
-//         college: "XYZ",
-//         nickName: "Chandu"
-//         }
-
-// employee_1.printFullName(); // basic 
+// employee_1.printFullName(); // basic
 // employee_1.printNickName();
 
+// const emp2NameRef1 = employee_1.printFullName.bind(employee_23);
+// const emp2NameRef2 = employee_1.printNickName.bind(employee_333);
+// emp2NameRef1();
+// emp2NameRef2();
+
+// const employee_1 = {
+//   name: "Rahul",
+//   college: "VSSD COLLEGE",
+//   nickName: "Gupta",
+//   printFullName: () => {
+//     console.log(this.name);
+//   },
+//   printNickName: () => {
+//     console.log(this.nickName);
+//   },
+// };
+// const employee_2 = {
+//   name: "Nikhat",
+//   college: "VSSD COLLEGE",
+//   nickName: "Nikhat",
+// };
+
+// const employee_3 = {
+//   name: "KEERTHANA",
+//   college: "XY112Z",
+//   nickName: "kEERTI",
+// };
+
+// employee_1.printFullName();
+// employee_1.printNickName();
 
 // const emp2NameRef = employee_1.printFullName.bind(employee_2);
 // const emp2NickNameRef = employee_1.printNickName.bind(employee_2);
 // emp2NameRef();
 // emp2NickNameRef();
 
-// this ==window
-
 // const employee_1 = {
-//     name: "Rahul",
-//     college: "VSSD COLLEGE",
-//     nickName: "Gupta",
-//     printFullName: ()=> {
-//     console.log(this.name)
-// },
-// printNickName: ()=>{
-//     console.log(this.nickName)
-// }
-//     }
+//   name: "Rahul",
+//   college: "VSSD COLLEGE",
+//   nickName: "Seth",
+//   salary: 2000000,
+// };
 // const employee_2 = {
-//     name: "Nikhat",
-//     college: "VSSD COLLEGE",
-//     nickName: "Nikhat"
-//     }
+//   name: "Venu",
+//   college: "VSSD COLLEGE",
+//   nickName: "Dara",
+//   salary: 3000000,
+// };
+// const employee_3 = {
+//   name: "Rahul",
+//   college: "XY112Z",
+//   nickName: "Kumar",
+//   salary: 4000000,
+// };
 
-//     const employee_3 = {
-//         name: "KEERTHANA",
-//         college: "XY112Z",
-//         nickName: "kEERTI"
-//         }
+// function welComeMessage(message, a, b) {
+//   // const message= 'Hi , ' + this.name + " " + "We are really happy to onboard you in our next billion jouney";
+//   const message1 = `Hi, ${this.name}  ${message}`;
+//   console.log(message1);
+//   console.log(a, b);
+// }
 
-// employee_1.printFullName(); 
-// employee_1.printNickName();
+// function salary(params, params1, params2) {
+//   console.log(params, params1, params2);
+// }
 
+// // welComeMessage.call(employee_1 , 'We are really happy to onboard you in our next billion jouney' , 234, 45)
+// // welComeMessage.call(employee_2 , 'We are really happy to onboard you in our next trillion jouney' , 567,789)
+// // welComeMessage.call(employee_3 , 'We are really happy to onboard you in our next trillion path' , 678  , 900)
 
-// const emp2NameRef = employee_1.printFullName.bind(employee_2);
-// const emp2NickNameRef = employee_1.printNickName.bind(employee_2);
-// emp2NameRef();
-// emp2NickNameRef();
+// //         // apply => parameter will be passed as a array
+// //         // call => paramter is passed as comma seperated
 
+// //         // apply
 
+// //         salary.apply(employee_1, [123 , 18 ,78]);
 
-const employee_1 = {
-    name: "Rahul",
-    college: "VSSD COLLEGE",
-    nickName: "Seth",
-    salary: 2000000
-    }
-const employee_2 = {
-    name: "Venu",
-    college: "VSSD COLLEGE",
-    nickName: "Dara",
-    salary: 3000000
-    }
-    const employee_3 = {
-        name: "Rahul",
-        college: "XY112Z",
-        nickName: "Kumar",
-        salary: 4000000
-
-        }
-
-
-        function welComeMessage (message , a ,b) {
-            // const message= 'Hi , ' + this.name + " " + "We are really happy to onboard you in our next billion jouney"; 
-            const message1 = `Hi, ${this.name}  ${message}`
-            console.log(message1);
-            console.log(a,b)
-        }
-
-        function salary(params , params1 , params2) {
-           console.log( params , params1,params2 )
-        }
-
-        // welComeMessage.call(employee_1 , 'We are really happy to onboard you in our next billion jouney' , 234, 45)
-        // welComeMessage.call(employee_2 , 'We are really happy to onboard you in our next trillion jouney' , 567,789)
-        // welComeMessage.call(employee_3 , 'We are really happy to onboard you in our next trillion path' , 678  , 900)
-
-
-
-        // apply => parameter will be passed as a array
-        // call => paramter is passed as comma seperated
-
-
-        // apply 
-
-        salary.apply(employee_1, [123 , 18 ,78]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // you have one function =>  context =>   // {} => this
