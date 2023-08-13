@@ -1,32 +1,19 @@
-// What is Hoisting?
+// What is Hoisting? done
 // How JS code executed?
-// What is execution context ?
+// What is execution context ? done
 // What is Scope?
 // What is lexical scope ?
-// What is diff b/w let var and const?
+// What is diff b/w let var and const? done
 // What is function statement?
 // what is function expression?
 // what is IIF (immediately invoked function)
-// Which value in js in not defined ?
-// what is defined value and not defined value ?
+// Which value in js in not defined ? done
+// what is defined value and not defined value ? done
 // Diff b/w null and undefined
-// What is Hoisting?
-// How JS code executed?
-// What is execution context ?
-// What is Scope?
-// What is lexical scope ?
-// What is diff b/w let var and const?
-// What is function statement?
-// what is function expression?
-// what is IIF (immediately invoked function)
-// Which value in js in not defined ?
-// what is defined value and not defined value ?
-// Diff b/w null and undefined
-// What is tdz?
+// What is Hoisting? done
+// What is tdz? done
 
-// does let and const are hoisted ?
-
-// Mohd Javid => 1
+// does let and const are hoisted ? done
 
 // Js Engine creates a speacial environoment to handle all the js code like ,
 // parshing , memory allocation , transformation and execution ,
@@ -78,7 +65,7 @@ let d1;
 // }
 
 //  var can be redeclared and reassign
-// let cannot be re declared any variable in same scope have declared with let you cannot re-declared that with var and const
+// let cannot be re declared any variable in same scope have declared with let  you cannot re-declared that with var and const
 // let variable can be re- assign
 // const variable cannot be re-assign and cannot be re-declared
 // const variable need to initilize at the time declaration
@@ -86,3 +73,46 @@ let d1;
 // const cc; erro
 const cc = "Vishal";
 // cc="name" error
+
+const call1224 = (callback) => {
+  //     callback  = (a, b) => {
+  //   return a + b;
+  // };
+
+  return callback(1, 2); // 3
+};
+
+const sum = (a, b) => {
+  return a + b;
+};
+
+// call1224(sum(5, 6)); // call1224(11)
+
+const data = call1224(sum); // here i am passing function as a reference , i am not calling the function
+console.log(data);
+
+// IIF
+
+// The function invoked at the time of declaration
+
+(function IIF() {
+  console.log("Hey I am IIf");
+})();
+
+//console.log(IIF()); // this will throw error
+
+const callme123 = () => {
+  console.log("hey");
+};
+
+// (
+//     callme123
+// )() this is not iif becuuse here we are using callme123 which is already declared
+
+(() => {
+  console.log("Hey Arrow , iif");
+})();
+
+(function () {
+  console.log("Hey I am anonymousx");
+})();
