@@ -255,17 +255,135 @@ const callMe1 = () => {
 
 // In javascript you can pass any arguments does matter how many parameter function accepting
 
-callMe(1234, 3456, 789); // / arguments.length  =>3
-callMe(); // arguments.length  =>0
-callMe1("vishal", "sharma", 888888);
+// callMe(1234, 3456, 789); // / arguments.length  =>3
+// callMe(); // arguments.length  =>0
+// callMe1("vishal", "sharma", 888888);
 
-// how to know the function name  ??
+// // how to know the function name  ??
 
-function Myname(param1, param2, param3) {
-  console.log("My name  I am cool");
+// function Myname(param1, param2, param3) {
+//   console.log(Myname.arguments); //
+//   console.log(arguments);
+//   // function
+// }
+
+// console.log(Myname.name);
+// console.log(Myname.length); // functionName.length will give the count of parameter that particular function is accepting
+
+// console.log(Myname.arguments); //
+
+// Myname(); // local
+// //
+// Myname(1);
+// Myname(1, 2);
+// Myname(1, 2, 4);
+
+//
+// october  a,b
+// november  a,b
+// decemeber a,b
+
+// Type Conversion=> Either js engine or developer convert one type into another type
+
+// explicit type conversion(type casting) => developer
+
+// implicit type conversion (type coersion)=> js
+
+// if any arithmetic operator is happening in that case js implicityl convert things in number  value
+// but in +  operator if applied between string  and  number this  will consider number as string value
+
+var tt = +("20" + "30" + "40") + +"120" + "230"; // 203160230
+
+console.log("ans2", tt);
+
+var tts = -("20" + "30" + "50") - ("30" - "30" + 60);
+
+console.log("ans1", tts);
+
+// operand1 + operand1 => if any of the operand are strign than js convert another operand in string
+// 20 +'30' =>  2030
+
+//  +operand => here plus operator will try to convert given operand in number
+
+console.log(+"vishal"); // NaN
+
+//
+console.log(+true); //
+
+console.log(+false); // 0
+
+console.log(typeof +"a" === typeof "vishal"); // false
+// typeof NaN  ===  string
+//  number  === string
+
+console.log(typeof +"1" === typeof +"vishal"); // false
+
+// typeof +"1" =  number
+
+// typeof +"vishal" => typeof NaN =>number
+
+console.log("A" < "B"); //  true
+console.log("a" < "A"); // ASCII CODE OF 'a' IS GREATER THAN ASCII CODE OF A
+
+console.log('"2" < 3', "2" < 3);
+
+// "2" < 3 => 2<3 // true
+
+// what does isNaN function does and what is the return type of that?
+
+console.log(isNaN(NaN)); //
+// it will check whether given arguments is NaN or not after applying arithmetic operator on that Argument
+// if given parameter gives NaN while converting it into number that case isNaN gives you true value
+
+console.log(isNaN(true)); //  false
+console.log(isNaN(false)); // false
+
+console.log(isNaN([])); // false , +[]=>0
+console.log(isNaN({})); // true  , +{}=>NaN
+
+console.log(isNaN("      ")); // false
+console.log(isNaN([true, true, false, 1, 2, 3])); //  true
+
+console.log(isNaN([9]));
+console.log(isNaN(["vishal"]));
+
+// function MyisNaN(param1) {
+//   const s = +param1;
+//   if (s.toString() === "NaN") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+console.log(NaN === NaN); // false
+console.log(NaN == NaN); // false
+
+// Developer  => I want to some support so that i should able to convert one type to another type
+
+const name1 = "Vishal";
+
+// const resultName = +"Vishal"; // => NaN
+
+const result = new Number(name1); //   NaN
+
+const a = new Number(8);
+// new String()
+// new Boolean();
+
+const number = 12345;
+// using toString method
+console.log(typeof number.toString());
+
+console.log(new String(number) + "Vishal");
+console.log();
+console.log(typeof new String(number)); // object
+
+console.log(new String(number)); //  String {'12345'}
+function Employee() {
+  return 123;
 }
 
-console.log(Myname.name);
-console.log(Myname.length); // functionName.length will give the count of parameter that particular function is accepting
+const employee = new Employee();
 
-console.log(Myname.arguments);
+console.log(employee);
