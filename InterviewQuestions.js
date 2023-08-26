@@ -534,3 +534,67 @@ Array.prototype.mymap = function () {
 };
 
 const resultmymap = ar.mymap(callback);
+
+// Events
+
+const button = document.getElementById("button");
+
+const callme1 = () => {
+  console.log("hey");
+};
+
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+button.addEventListener("click", () => {
+  console.log("hey");
+});
+
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+button.addEventListener("click", function getName() {
+  console.log("name");
+});
+
+function callme() {
+  console.log("Callme");
+}
+
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);
+button.addEventListener("click", callme);

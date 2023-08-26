@@ -245,36 +245,39 @@ secondFunction();
 //     })
 //   }, 0)
 
-//   const timer2 = setTimeout(() => {
-//     console.log('timer2')
-//   }, 0)
+const timer2 = setTimeout(() => {
+  console.log("timer2");
+}, 0);
 
-// console.log('start');
+console.log("start");
 
-// const promise1 = Promise.resolve().then(() => {
-//   console.log('promise1');
-//   const timer2 = setTimeout(() => {
-//     console.log('timer2')
-//   }, 0)
-// });
+const promise1 = Promise.resolve().then(() => {
+  console.log("promise1");
+  const timer2 = setTimeout(() => {
+    console.log("timer2");
+  }, 0);
+});
 
-// const timer1 = setTimeout(() => {
-//   console.log('timer1')
-//   const promise2 = Promise.resolve().then(() => {
-//     console.log('promise2')
-//   })
-// }, 0)
+const timer1 = setTimeout(() => {
+  console.log("timer1");
+  const promise2 = Promise.resolve().then(() => {
+    console.log("promise2");
+  });
+}, 0);
 
-// console.log('end');
+console.log("end");
 
 console.log("start");
 setTimeout(() => {
   console.log("setTimeout");
 }, 0);
+
 Promise.resolve().then(() => {
   console.log("resolve");
 });
+
 console.log("end");
+
 const promise = new Promise((resolve, reject) => {
   console.log(1);
   setTimeout(() => {
@@ -285,10 +288,72 @@ const promise = new Promise((resolve, reject) => {
 
   console.log(2);
 });
+
 promise.then((res) => {
   console.log(res);
 });
+
 setTimeout(() => {
   console.log("Are!!");
 }, 0);
 console.log(4);
+
+// start end 1 2 3 4 resolve settimeout timerstart timerend success are
+// start end 4 resolve 1 2 setTimeout are timestart timend success
+
+// start end 4 resolve 1 2 res timestart success timerend settimout are
+// start end 4 1 2 resolve timerstart timerend success are!
+// start end 4 resolve 1 2 settimeout Are!! timerStart timerEnd success
+
+// start
+
+// end
+
+// 4
+
+// resolve
+
+// 1
+
+// 2
+
+// settimeout
+
+// Are!!
+
+// Timestart
+
+// success
+
+// timerEnd
+
+// Success
+
+// 1. Start;
+
+// 4.end
+
+// 8.4
+
+// 5. 1,2
+
+// 7. Taskque//are
+
+// 6.res.
+
+// 3. Resolve.
+
+// 2. Taskque//settimeout
+
+// 5.Taskque//timer start,success,timerend
+
+// start
+// end
+// 1
+// 2
+// 4
+// settimeout
+// timer start
+// timer end
+//success
+// are
