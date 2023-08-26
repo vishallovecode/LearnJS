@@ -442,3 +442,95 @@ console.log("mapped", maped);
 // What is event bubbling
 // non-primitive data type pass by reference vs pass by value
 // Array find method
+
+// map for array
+
+// Imperative statement(You have power to modify the things stop the program to run in cerntain condiotion)
+
+// I have divided one week in three parts according to the topic
+// first part covered mostl debouncing throttling at evening 6-8
+// second part covered mostl array method at evening 3-7
+// third part i covered rest of the topic
+
+// declarative statement (result orieneted) you dont have power to modify things b/w until whole code execute
+// Yes sir i have completed all the questions within 2 days
+
+//Print all the array element
+const array12 = new Array(12).fill(3); // [3,3,3,3,3,3,3,3,3,3,3,3]
+// imperative
+// for (let i = 0; i < array12.length - 5; i = i * 2) {
+//   console.log(array12[i]);
+// }
+
+//
+
+// method call
+// this => array12
+// here forEach is higher order function of array
+// it takes onf function as a argument
+// the function which took by the forEach is called callback function
+
+// that callback functions takes three parameter
+
+function printData(currentValue, currentIndex, originalArray) {
+  console.log(currentValue, currentIndex, originalArray);
+}
+
+// here callback is passed as a reference in forEach higher order functions
+// forEach traverse thorugh all the element if array and invoked callback function to the everu element
+// array12.forEach(callback);
+
+Array.prototype.myForEach = function (callback) {
+  // ?? how array i will get
+  // this => value of this will be the array which is accessing this method
+  // const array  = this;
+  if (typeof callback == "function" && typeof Array.isArray(this)) {
+    for (let i = 0; i < this.length; i++) {
+      callback(this[i], i, this);
+    }
+  }
+};
+
+// in method invocation  t
+array12.myForEach(printData);
+
+console.log(array12, "1234");
+
+// I want to create my own forach  ???
+
+[5, 6].myForEach((value, index, array) => {
+  console.log(value * 100);
+});
+
+// Map  ??
+
+// map => ladki
+
+// ladka
+
+const ar = [100, 50, 80, 40];
+// newarr = > [yes , no, yes , no ]
+function callback(value, index, originalArray) {
+  if (value > 70) {
+    return "yes";
+  } else {
+    return "no";
+  }
+}
+const result = ar.map(callback);
+console.log("result", result); // ['yes', 'no' , 'yes' ,'no']
+
+Array.prototype.mymap = function () {
+  // ?? how array i will get
+  // this => value of this will be the array which is accessing this method
+  // const array  = this;
+  const result = [];
+  if (typeof callback == "function" && typeof Array.isArray(this)) {
+    for (let i = 0; i < this.length; i++) {
+      result.push(callback(this[i], i, this));
+    }
+  }
+  return result;
+};
+
+const resultmymap = ar.mymap(callback);
