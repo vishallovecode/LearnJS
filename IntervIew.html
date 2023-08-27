@@ -39,13 +39,30 @@
             margin: auto;
 
         }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            height: 150px;
+            width: 200px;
+            border: 2px solid lightcoral;
+            justify-content: space-around;
+            padding-left: 10px;
+        }
+
+        .button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
     <h2>Interview Questions</h2>
-    <button id="button">button</button>
-    <div id='grandparent' class="flex">
+    <!-- <button id="button">button</button> -->
+    <!-- <div id='grandparent' class="flex">
         GrandParent
         <div id="parent" class="flex">
             Parent
@@ -56,6 +73,23 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <div class="card" onclick="handleCard(event)">
+        <div style="height: 50%;width: 100%;">
+            <img style="height: 100%;width: 100%;"
+                src='https://cdn.zeptonow.com/production///tr:w-450,ar-2580-2071,pr-true,f-webp,q-80/inventory/product/54099eb2-2d08-4013-a822-a3eebc72f19f-1Bw_fwABv4H42G5A5xr-WfbyeVPXrT2nO.jpeg' />
+        </div>
+
+
+        <div class="name">Amul Malai Paneer Fresh</div>
+        <div style="display: flex; justify-content: space-between; padding: 10px;">
+            <span> Price:1200 </span>
+            <button class="button" onclick="addButton(event)">Add</button>
+            <input type='checkbox' onchange="checkBoxHandler(event)" onclick="checkBoxHandler(event)" />
+        </div>
+
+
     </div>
     <script src='InterviewQuestions.js'>
 

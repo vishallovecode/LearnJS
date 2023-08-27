@@ -603,21 +603,49 @@ console.log(array12, "1234");
 // event is bubble from to parent top level parent of html dom is documnet
 
 function callGrandChild(e) {
-  console.log(e);
-  alert("I am grand child");
+  console.log(" callGrandChild e.target", e.target);
+  console.log(" callGrandChild e.currentTarget", e.currentTarget);
+  console.log(
+    "e.target.parentElement",
+    e.target.parentElement?.parentElement?.parentElement?.parentElement
+      ?.parentElement?.parentElement
+  );
 }
 
-const callChild = (event) => {
-  console.log("child=>", event);
-  alert("I am  child");
-};
+const callChild = (e) => {};
 document.getElementById("child").addEventListener("click", callChild);
+
+// document.getElementById("grandparent").addEventListener("click", function(e) {
+//   console.log(e);
+//   console.log(" grandparent e.target", e.target);
+//   console.log(" grandparent e.currentTarget", e.currentTarget);
+//   alert("Grand Parent");
+// });
 
 document.getElementById("grandparent").addEventListener("click", (e) => {
   console.log(e);
+  console.log(" grandparent e.target", e.target);
+  console.log(" grandparent e.currentTarget", e.currentTarget);
   alert("Grand Parent");
 });
 
 // function addEventListener(callback) {
 //   // callback(event)
 // }
+
+// event.target vs event.current target
+
+function handleCard() {
+  window.location =
+    "https://www.zeptonow.com/pn/amul-malai-paneer-fresh/spid/7a496806-ae83-499f-be30-111a416c9a0d?sid=21d42ce9-9a73-428f-89ef-75323784c3b8&pvid=54099eb2-2d08-4013-a822-a3eebc72f19f";
+}
+
+function addButton(e) {
+  e.stopPropagation();
+  alert("Item Added in cart successfully!!!");
+}
+
+function checkBoxHandler(e) {
+  e.stopPropagation();
+  e.preventDefault();
+}
