@@ -612,8 +612,8 @@ function callGrandChild(e) {
   );
 }
 
-const callChild = (e) => {};
-document.getElementById("child").addEventListener("click", callChild);
+// const callChild = (e) => {};
+// document.getElementById("child").addEventListener("click", callChild);
 
 // document.getElementById("grandparent").addEventListener("click", function(e) {
 //   console.log(e);
@@ -622,12 +622,12 @@ document.getElementById("child").addEventListener("click", callChild);
 //   alert("Grand Parent");
 // });
 
-document.getElementById("grandparent").addEventListener("click", (e) => {
-  console.log(e);
-  console.log(" grandparent e.target", e.target);
-  console.log(" grandparent e.currentTarget", e.currentTarget);
-  alert("Grand Parent");
-});
+// document.getElementById("grandparent").addEventListener("click", (e) => {
+//   console.log(e);
+//   console.log(" grandparent e.target", e.target);
+//   console.log(" grandparent e.currentTarget", e.currentTarget);
+//   alert("Grand Parent");
+// });
 
 // function addEventListener(callback) {
 //   // callback(event)
@@ -642,7 +642,45 @@ function handleCard() {
 
 function addButton(e) {
   e.stopPropagation();
-  alert("Item Added in cart successfully!!!");
+  if (document.getElementById("buttonadd")?.textContent === "Add") {
+    e.target.innerHTML = `<div  id ='decrement' onclick = ${decrement(
+      event
+    )}> - </div> <div id = 'productcount'>${1}</div> <div  id = 'increment' > + </div>`;
+    document.getElementById("increment").addEventListener("click", increment);
+    document.getElementById("decrement").addEventListener("click", decrement);
+  } else {
+    return 0;
+  }
+  return;
+}
+
+function increment(e) {
+  if (
+    document.getElementById("increment") &&
+    document.getElementById("increment")?.textContent
+  ) {
+    console.log(e.target.textContent);
+    const count =
+      parseInt(document.getElementById("productcount").textContent) + 1;
+    document.getElementById("productcount").textContent = count;
+  }
+}
+
+function decrement(e) {
+  if (parseInt(document.getElementById("productcount")?.textContent) > 1) {
+    e.stopPropagation();
+    if (
+      document.getElementById("increment") &&
+      document.getElementById("increment")?.textContent
+    ) {
+      console.log(e.target.textContent);
+      const count =
+        parseInt(document.getElementById("productcount").textContent) - 1;
+      document.getElementById("productcount").textContent = count;
+    }
+  } else {
+    document.getElementById("buttonadd").textContent = "Add";
+  }
 }
 
 function checkBoxHandler(e) {

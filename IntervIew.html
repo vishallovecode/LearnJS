@@ -54,6 +54,7 @@
         .button {
             padding: 10px;
             border: none;
+            display: flex;
             border-radius: 10px;
         }
     </style>
@@ -85,7 +86,7 @@
         <div class="name">Amul Malai Paneer Fresh</div>
         <div style="display: flex; justify-content: space-between; padding: 10px;">
             <span> Price:1200 </span>
-            <button class="button" onclick="addButton(event)">Add</button>
+            <button id='buttonadd' class="button" onclick="addButton(event)">Add</button>
             <input type='checkbox' onchange="checkBoxHandler(event)" onclick="checkBoxHandler(event)" />
         </div>
 
