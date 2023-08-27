@@ -268,32 +268,36 @@ const timer1 = setTimeout(() => {
 console.log("end");
 
 console.log("start");
-setTimeout(() => {
+
+setTimeout(function A() {
   console.log("setTimeout");
 }, 0);
 
-Promise.resolve().then(() => {
+Promise.resolve().then(function B() {
   console.log("resolve");
 });
 
 console.log("end");
 
-const promise = new Promise((resolve, reject) => {
-  console.log(1);
-  setTimeout(() => {
+const promise = new Promise(function C(resolve, reject) {
+  Date1.jsconsole.log(1);
+
+  setTimeout(function D() {
     console.log("timerStart");
+
     resolve("success"); //
+
     console.log("timerEnd");
   }, 0);
 
   console.log(2);
 });
 
-promise.then((res) => {
+promise.then(function f(res) {
   console.log(res);
 });
 
-setTimeout(() => {
+setTimeout(function E() {
   console.log("Are!!");
 }, 0);
 console.log(4);
@@ -352,6 +356,7 @@ console.log(4);
 // 1
 // 2
 // 4
+// resolve
 // settimeout
 // timer start
 // timer end

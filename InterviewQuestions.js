@@ -508,93 +508,116 @@ console.log(array12, "1234");
 
 // ladka
 
-const ar = [100, 50, 80, 40];
-// newarr = > [yes , no, yes , no ]
-function callback(value, index, originalArray) {
-  if (value > 70) {
-    return "yes";
-  } else {
-    return "no";
-  }
+// const ar = [100, 50, 80, 40];
+// // newarr = > [yes , no, yes , no ]
+// function callback(value, index, originalArray) {
+//   if (value > 70) {
+//     return "yes";
+//   } else {
+//     return "no";
+//   }
+// }
+// const result = ar.map(callback);
+// console.log("result", result); // ['yes', 'no' , 'yes' ,'no']
+
+// Array.prototype.mymap = function (callback) {
+//   // ?? how array i will get
+//   // this => value of this will be the array which is accessing this method
+//   // const array  = this;
+//   const result = [];
+//   if (typeof callback == "function" && typeof Array.isArray(this)) {
+//     for (let i = 0; i < this.length; i++) {
+//       result.push(callback(this[i], i, this));
+//     }
+//   }
+//   return result;
+// };
+
+// const resultmymap = ar.mymap(callback);
+
+// // Events
+
+// const button = document.getElementById("button");
+
+// const callme1 = () => {
+//   console.log("hey");
+// };
+
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+// button.addEventListener("click", () => {
+//   console.log("hey");
+// });
+
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+// button.addEventListener("click", function getName() {
+//   console.log("name");
+// });
+
+// function callme() {
+//   console.log("Callme");
+// }
+
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+// button.addEventListener("click", callme);
+
+// Event bubbling
+// event is bubble from to parent top level parent of html dom is documnet
+
+function callGrandChild(e) {
+  console.log(e);
+  alert("I am grand child");
 }
-const result = ar.map(callback);
-console.log("result", result); // ['yes', 'no' , 'yes' ,'no']
 
-Array.prototype.mymap = function () {
-  // ?? how array i will get
-  // this => value of this will be the array which is accessing this method
-  // const array  = this;
-  const result = [];
-  if (typeof callback == "function" && typeof Array.isArray(this)) {
-    for (let i = 0; i < this.length; i++) {
-      result.push(callback(this[i], i, this));
-    }
-  }
-  return result;
+const callChild = (event) => {
+  console.log("child=>", event);
+  alert("I am  child");
 };
+document.getElementById("child").addEventListener("click", callChild);
 
-const resultmymap = ar.mymap(callback);
-
-// Events
-
-const button = document.getElementById("button");
-
-const callme1 = () => {
-  console.log("hey");
-};
-
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
-});
-button.addEventListener("click", () => {
-  console.log("hey");
+document.getElementById("grandparent").addEventListener("click", (e) => {
+  console.log(e);
+  alert("Grand Parent");
 });
 
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-button.addEventListener("click", function getName() {
-  console.log("name");
-});
-
-function callme() {
-  console.log("Callme");
-}
-
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
-button.addEventListener("click", callme);
+// function addEventListener(callback) {
+//   // callback(event)
+// }

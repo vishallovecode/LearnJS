@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+        .flex {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #grandparent {
+            border: 2px solid red;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+        }
+
+        #child {
+            border: 2px solid black;
+            width: 350px;
+            height: 350px;
+            margin: auto;
+        }
+
+        #parent {
+            border: 2px solid blue;
+            width: 450px;
+            height: 450px;
+            margin: auto;
+
+        }
+
+        #grandchild {
+            border: 2px solid pink;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+
+        }
+    </style>
+</head>
+
 <body>
     <h2>Interview Questions</h2>
     <button id="button">button</button>
+    <div id='grandparent' class="flex">
+        GrandParent
+        <div id="parent" class="flex">
+            Parent
+            <div id="child" class="flex">
+                Child
+                <div id='grandchild' class="flex" onclick="callGrandChild(event)">
+                    Grandchild
+                </div>
+            </div>
+        </div>
+    </div>
     <script src='InterviewQuestions.js'>
 
     </script>
