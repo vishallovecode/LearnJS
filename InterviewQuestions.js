@@ -433,17 +433,23 @@ console.log("mapped", maped);
 
 // throttle
 // debounce
-// event delegation
-// map filter and reduce ka polyfill
-// slice vs splice
 // shallow copy vs deep copy
 // JSON.stringify()
 // JSON.parse()
-// What is event bubbling
+
+// reduce ka polyfill
+// slice vs splice
+// shallow copy vs deep copy
+
+// event delegation => done
+// map filter and reduce ka polyfill => done
+// slice vs splice
+
+// What is event bubbling= > done
 // non-primitive data type pass by reference vs pass by value
 // Array find method
 
-// map for array
+// map for array => done
 
 // Imperative statement(You have power to modify the things stop the program to run in cerntain condiotion)
 
@@ -687,3 +693,79 @@ function checkBoxHandler(e) {
   e.stopPropagation();
   e.preventDefault();
 }
+
+// event delegation
+
+// Array find method  ??
+
+const array1 = [4, 5, 6, 7, 8, 9, 10];
+// Find is a higher order function
+
+const result = array1.find((currentElement, index) => {
+  return currentElement % 2 == 0;
+});
+
+console.log(result, "result");
+
+const employee = [
+  {
+    name: "Vishal",
+    id: 1234,
+  },
+  {
+    name: "Visha1111l",
+    id: 1235,
+  },
+  {
+    name: "Vi111111shal",
+    id: 12344,
+  },
+  {
+    name: "Vis1111hal",
+    id: 123333,
+  },
+  {
+    name: "Vi111shal",
+    id: 121113,
+  },
+];
+
+const callback = (employeeObj, index) => {
+  return employeeObj.id === 121113;
+};
+const result1 = employee.find(callback);
+console.log(result1);
+
+// Ways to defined object In JS
+
+// Object Literal
+const obj1 = {
+  a: 2,
+};
+
+// Object constructor
+
+const obj12 = new Object(null);
+
+// Constructor Function
+function Employee(name) {
+  this.name = name;
+}
+
+const emp = new Employee("Vishal");
+
+// Object.create()
+
+const obj11 = Object.create(obj12);
+// obj11 = {};
+// obj11.name ="Vishal"
+
+// class
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const per = new Person("Vishal");
