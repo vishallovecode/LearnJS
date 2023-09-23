@@ -832,7 +832,7 @@ const mp1 = new Promise((resolved, rejected) => {
   setTimeout(() => {
     console.log("Hey");
     rejected("After 2 seconds rejected");
-    // resolved("After 2 seconds resolved");
+    resolved("After 2 seconds resolved");
   }, 2000);
 });
 
@@ -855,7 +855,8 @@ const success = (res) => {
 const error = (error) => {
   console.log("error", error);
 };
-// mp1.then(success,error);
+// mp1.then(success,error);// this approac recommended
+
 mp1
   .then((res) => {
     console.log(res);
@@ -864,3 +865,17 @@ mp1
     console.log("error::", error);
   });
 // mp1.then(success).catch(error);
+
+// async and await which is also use for getting result from the promises
+// if you want to use await that should be inside the async function
+
+async function getPromise() {
+  try {
+    const data = await mp1;
+    console.log("data", data);
+  } catch (error) {
+    console.log("error123", error);
+  }
+}
+
+console.log("async function", getPromise());
