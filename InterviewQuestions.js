@@ -779,15 +779,21 @@
 
 // event loop => microtask  , macro task  ,  stack , event loop
 
-var a = 20;
-console.log(a); // 20
+// var a = 20;
+// console.log(a); // 20
 
-const callback = () => {
-  var b = 100;
-  console.log(b);
-};
+// const callback2 = (callback3, call4) => {
+//   setTimeout(() => callback3(call4));
+// };
 
-setTimeout(callback, 1000); // asynchrnous
+// const callback3 = (call4) => {
+//   setTimeout(call4);
+// };
+// const callback = (callback2, callback3, call4) => {
+//   setTimeout(() => callback2(callback3, call4));
+// };
+
+// setTimeout(callback, 1000); // asynchrnous
 
 // earlier before promises we need to handle asyn programming in js using callback
 // callback hell
