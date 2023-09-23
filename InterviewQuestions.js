@@ -365,407 +365,443 @@
 
 // // const resultName = +"Vishal"; // => NaN
 
-// const result = new Number(name1); //   NaN
+// // const result = new Number(name1); //   NaN
 
-// const a = new Number(8);
-// // new String()
-// // new Boolean();
+// // const a = new Number(8);
+// // // new String()
+// // // new Boolean();
 
-// const number = 12345;
-// // using toString method
-// console.log(typeof number.toString());
+// // const number = 12345;
+// // // using toString method
+// // console.log(typeof number.toString());
 
-// console.log(new String(number) + "Vishal");
-// console.log();
-// console.log(typeof new String(number)); // object
+// // console.log(new String(number) + "Vishal");
+// // console.log();
+// // console.log(typeof new String(number)); // object
 
-// console.log(new String(number)); //  String {'12345'}
-// function Employee() {
-//   return 123;
-// }
+// // console.log(new String(number)); //  String {'12345'}
+// // function Employee() {
+// //   return 123;
+// // }
 
-// const employee = new Employee();
+// // const employee = new Employee();
 
-// console.log(employee);
+// // console.log(employee);
 
-// callback vs higher order function
+// // callback vs higher order function
 
-// const callback = () => {
-//   console.log("hey  ");
-// };
+// // const callback = () => {
+// //   console.log("hey  ");
+// // };
 
-// // Generally callback  function pass as a reference
+// // // Generally callback  function pass as a reference
 
-// setTimeout(callback, 1000); // we passed name callback arrow function
-// setTimeout(() => {
-//   console.log("hey3");
-// }, 2000); // we passed  anonymous callback arrow function
+// // setTimeout(callback, 1000); // we passed name callback arrow function
+// // setTimeout(() => {
+// //   console.log("hey3");
+// // }, 2000); // we passed  anonymous callback arrow function
 
-// callback function  can be arrow function normal function anonymous function , named function
+// // callback function  can be arrow function normal function anonymous function , named function
 
-const array = [1, 2, 3, 4, 5]; // =>  [{1:1} , {2:2} , {3:3} , {4:4}, {5:5}]
+// const array = [1, 2, 3, 4, 5]; // =>  [{1:1} , {2:2} , {3:3} , {4:4}, {5:5}]
 
-//
-// const maped = array.map((value, index, array) => {
+// //
+// // const maped = array.map((value, index, array) => {
+// //   return {
+// //     [value]: value,
+// //   };
+// // });
+
+// function mapCallback(value, index, array) {
 //   return {
 //     [value]: value,
 //   };
-// });
+// }
+// // map can return  anything
+// const maped = array.map(mapCallback);
+// console.log("mapped", maped);
 
-function mapCallback(value, index, array) {
-  return {
-    [value]: value,
-  };
-}
-// map can return  anything
-const maped = array.map(mapCallback);
-console.log("mapped", maped);
+// // function map(callback) {
+// //   // array
+// //   for (let i = 0; i < array.length; i++) {
+// //     callback(array[i], i, array);
+// //   }
+// // }
 
-// function map(callback) {
-//   // array
-//   for (let i = 0; i < array.length; i++) {
-//     callback(array[i], i, array);
-//   }
+// // the function which takes the function as a argument or return function is called higher order function
+// // the function which is pass as a argument into hof is called callback function
+
+// // throttle
+// // debounce
+// // shallow copy vs deep copy
+// // JSON.stringify()
+// // JSON.parse()
+
+// // reduce ka polyfill
+// // slice vs splice
+// // shallow copy vs deep copy
+
+// // event delegation => done
+// // map filter and reduce ka polyfill => done
+// // slice vs splice
+
+// // What is event bubbling= > done
+// // non-primitive data type pass by reference vs pass by value
+// // Array find method
+
+// // map for array => done
+
+// // Imperative statement(You have power to modify the things stop the program to run in cerntain condiotion)
+
+// // I have divided one week in three parts according to the topic
+// // first part covered mostl debouncing throttling at evening 6-8
+// // second part covered mostl array method at evening 3-7
+// // third part i covered rest of the topic
+
+// // declarative statement (result orieneted) you dont have power to modify things b/w until whole code execute
+// // Yes sir i have completed all the questions within 2 days
+
+// //Print all the array element
+// const array12 = new Array(12).fill(3); // [3,3,3,3,3,3,3,3,3,3,3,3]
+// // imperative
+// // for (let i = 0; i < array12.length - 5; i = i * 2) {
+// //   console.log(array12[i]);
+// // }
+
+// //
+
+// // method call
+// // this => array12
+// // here forEach is higher order function of array
+// // it takes onf function as a argument
+// // the function which took by the forEach is called callback function
+
+// // that callback functions takes three parameter
+
+// function printData(currentValue, currentIndex, originalArray) {
+//   console.log(currentValue, currentIndex, originalArray);
 // }
 
-// the function which takes the function as a argument or return function is called higher order function
-// the function which is pass as a argument into hof is called callback function
+// // here callback is passed as a reference in forEach higher order functions
+// // forEach traverse thorugh all the element if array and invoked callback function to the everu element
+// // array12.forEach(callback);
 
-// throttle
-// debounce
-// shallow copy vs deep copy
-// JSON.stringify()
-// JSON.parse()
-
-// reduce ka polyfill
-// slice vs splice
-// shallow copy vs deep copy
-
-// event delegation => done
-// map filter and reduce ka polyfill => done
-// slice vs splice
-
-// What is event bubbling= > done
-// non-primitive data type pass by reference vs pass by value
-// Array find method
-
-// map for array => done
-
-// Imperative statement(You have power to modify the things stop the program to run in cerntain condiotion)
-
-// I have divided one week in three parts according to the topic
-// first part covered mostl debouncing throttling at evening 6-8
-// second part covered mostl array method at evening 3-7
-// third part i covered rest of the topic
-
-// declarative statement (result orieneted) you dont have power to modify things b/w until whole code execute
-// Yes sir i have completed all the questions within 2 days
-
-//Print all the array element
-const array12 = new Array(12).fill(3); // [3,3,3,3,3,3,3,3,3,3,3,3]
-// imperative
-// for (let i = 0; i < array12.length - 5; i = i * 2) {
-//   console.log(array12[i]);
-// }
-
-//
-
-// method call
-// this => array12
-// here forEach is higher order function of array
-// it takes onf function as a argument
-// the function which took by the forEach is called callback function
-
-// that callback functions takes three parameter
-
-function printData(currentValue, currentIndex, originalArray) {
-  console.log(currentValue, currentIndex, originalArray);
-}
-
-// here callback is passed as a reference in forEach higher order functions
-// forEach traverse thorugh all the element if array and invoked callback function to the everu element
-// array12.forEach(callback);
-
-Array.prototype.myForEach = function (callback) {
-  // ?? how array i will get
-  // this => value of this will be the array which is accessing this method
-  // const array  = this;
-  if (typeof callback == "function" && typeof Array.isArray(this)) {
-    for (let i = 0; i < this.length; i++) {
-      callback(this[i], i, this);
-    }
-  }
-};
-
-// in method invocation  t
-array12.myForEach(printData);
-
-console.log(array12, "1234");
-
-// I want to create my own forach  ???
-
-[5, 6].myForEach((value, index, array) => {
-  console.log(value * 100);
-});
-
-// Map  ??
-
-// map => ladki
-
-// ladka
-
-// const ar = [100, 50, 80, 40];
-// // newarr = > [yes , no, yes , no ]
-// function callback(value, index, originalArray) {
-//   if (value > 70) {
-//     return "yes";
-//   } else {
-//     return "no";
-//   }
-// }
-// const result = ar.map(callback);
-// console.log("result", result); // ['yes', 'no' , 'yes' ,'no']
-
-// Array.prototype.mymap = function (callback) {
+// Array.prototype.myForEach = function (callback) {
 //   // ?? how array i will get
 //   // this => value of this will be the array which is accessing this method
 //   // const array  = this;
-//   const result = [];
 //   if (typeof callback == "function" && typeof Array.isArray(this)) {
 //     for (let i = 0; i < this.length; i++) {
-//       result.push(callback(this[i], i, this));
+//       callback(this[i], i, this);
 //     }
 //   }
-//   return result;
 // };
 
-// const resultmymap = ar.mymap(callback);
+// // in method invocation  t
+// array12.myForEach(printData);
 
-// // Events
+// console.log(array12, "1234");
 
-// const button = document.getElementById("button");
+// // I want to create my own forach  ???
 
-// const callme1 = () => {
-//   console.log("hey");
+// [5, 6].myForEach((value, index, array) => {
+//   console.log(value * 100);
+// });
+
+// // Map  ??
+
+// // map => ladki
+
+// // ladka
+
+// // const ar = [100, 50, 80, 40];
+// // // newarr = > [yes , no, yes , no ]
+// // function callback(value, index, originalArray) {
+// //   if (value > 70) {
+// //     return "yes";
+// //   } else {
+// //     return "no";
+// //   }
+// // }
+// // const result = ar.map(callback);
+// // console.log("result", result); // ['yes', 'no' , 'yes' ,'no']
+
+// // Array.prototype.mymap = function (callback) {
+// //   // ?? how array i will get
+// //   // this => value of this will be the array which is accessing this method
+// //   // const array  = this;
+// //   const result = [];
+// //   if (typeof callback == "function" && typeof Array.isArray(this)) {
+// //     for (let i = 0; i < this.length; i++) {
+// //       result.push(callback(this[i], i, this));
+// //     }
+// //   }
+// //   return result;
+// // };
+
+// // const resultmymap = ar.mymap(callback);
+
+// // // Events
+
+// // const button = document.getElementById("button");
+
+// // const callme1 = () => {
+// //   console.log("hey");
+// // };
+
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+// // button.addEventListener("click", () => {
+// //   console.log("hey");
+// // });
+
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+// // button.addEventListener("click", function getName() {
+// //   console.log("name");
+// // });
+
+// // function callme() {
+// //   console.log("Callme");
+// // }
+
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+// // button.addEventListener("click", callme);
+
+// // Event bubbling
+// // event is bubble from to parent top level parent of html dom is documnet
+
+// function callGrandChild(e) {
+//   console.log(" callGrandChild e.target", e.target);
+//   console.log(" callGrandChild e.currentTarget", e.currentTarget);
+//   console.log(
+//     "e.target.parentElement",
+//     e.target.parentElement?.parentElement?.parentElement?.parentElement
+//       ?.parentElement?.parentElement
+//   );
+// }
+
+// // const callChild = (e) => {};
+// // document.getElementById("child").addEventListener("click", callChild);
+
+// // document.getElementById("grandparent").addEventListener("click", function(e) {
+// //   console.log(e);
+// //   console.log(" grandparent e.target", e.target);
+// //   console.log(" grandparent e.currentTarget", e.currentTarget);
+// //   alert("Grand Parent");
+// // });
+
+// // document.getElementById("grandparent").addEventListener("click", (e) => {
+// //   console.log(e);
+// //   console.log(" grandparent e.target", e.target);
+// //   console.log(" grandparent e.currentTarget", e.currentTarget);
+// //   alert("Grand Parent");
+// // });
+
+// // function addEventListener(callback) {
+// //   // callback(event)
+// // }
+
+// // event.target vs event.current target
+
+// function handleCard() {
+//   window.location =
+//     "https://www.zeptonow.com/pn/amul-malai-paneer-fresh/spid/7a496806-ae83-499f-be30-111a416c9a0d?sid=21d42ce9-9a73-428f-89ef-75323784c3b8&pvid=54099eb2-2d08-4013-a822-a3eebc72f19f";
+// }
+
+// function addButton(e) {
+//   e.stopPropagation();
+//   if (document.getElementById("buttonadd")?.textContent === "Add") {
+//     e.target.innerHTML = `<div  id ='decrement' onclick = ${decrement(
+//       event
+//     )}> - </div> <div id = 'productcount'>${1}</div> <div  id = 'increment' > + </div>`;
+//     document.getElementById("increment").addEventListener("click", increment);
+//     document.getElementById("decrement").addEventListener("click", decrement);
+//   } else {
+//     return 0;
+//   }
+//   return;
+// }
+
+// function increment(e) {
+//   if (
+//     document.getElementById("increment") &&
+//     document.getElementById("increment")?.textContent
+//   ) {
+//     console.log(e.target.textContent);
+//     const count =
+//       parseInt(document.getElementById("productcount").textContent) + 1;
+//     document.getElementById("productcount").textContent = count;
+//   }
+// }
+
+// function decrement(e) {
+//   if (parseInt(document.getElementById("productcount")?.textContent) > 1) {
+//     e.stopPropagation();
+//     if (
+//       document.getElementById("increment") &&
+//       document.getElementById("increment")?.textContent
+//     ) {
+//       console.log(e.target.textContent);
+//       const count =
+//         parseInt(document.getElementById("productcount").textContent) - 1;
+//       document.getElementById("productcount").textContent = count;
+//     }
+//   } else {
+//     document.getElementById("buttonadd").textContent = "Add";
+//   }
+// }
+
+// function checkBoxHandler(e) {
+//   e.stopPropagation();
+//   e.preventDefault();
+// }
+
+// // event delegation
+
+// // Array find method  ??
+
+// const array1 = [4, 5, 6, 7, 8, 9, 10];
+// // Find is a higher order function
+
+// const result = array1.find((currentElement, index) => {
+//   return currentElement % 2 == 0;
+// });
+
+// console.log(result, "result");
+
+// const employee = [
+//   {
+//     name: "Vishal",
+//     id: 1234,
+//   },
+//   {
+//     name: "Visha1111l",
+//     id: 1235,
+//   },
+//   {
+//     name: "Vi111111shal",
+//     id: 12344,
+//   },
+//   {
+//     name: "Vis1111hal",
+//     id: 123333,
+//   },
+//   {
+//     name: "Vi111shal",
+//     id: 121113,
+//   },
+// ];
+
+// const callback = (employeeObj, index) => {
+//   return employeeObj.id === 121113;
+// };
+// const result1 = employee.find(callback);
+// console.log(result1);
+
+// // Ways to defined object In JS
+
+// // Object Literal
+// const obj1 = {
+//   a: 2,
 // };
 
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
-// button.addEventListener("click", () => {
-//   console.log("hey");
-// });
+// // Object constructor
 
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
-// button.addEventListener("click", function getName() {
-//   console.log("name");
-// });
+// const obj12 = new Object(null);
 
-// function callme() {
-//   console.log("Callme");
+// // Constructor Function
+// function Employee(name) {
+//   this.name = name;
 // }
 
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
-// button.addEventListener("click", callme);
+// const emp = new Employee("Vishal");
 
-// Event bubbling
-// event is bubble from to parent top level parent of html dom is documnet
+// // Object.create()
 
-function callGrandChild(e) {
-  console.log(" callGrandChild e.target", e.target);
-  console.log(" callGrandChild e.currentTarget", e.currentTarget);
-  console.log(
-    "e.target.parentElement",
-    e.target.parentElement?.parentElement?.parentElement?.parentElement
-      ?.parentElement?.parentElement
-  );
-}
+// const obj11 = Object.create(obj12);
+// // obj11 = {};
+// // obj11.name ="Vishal"
 
-// const callChild = (e) => {};
-// document.getElementById("child").addEventListener("click", callChild);
+// // class
 
-// document.getElementById("grandparent").addEventListener("click", function(e) {
-//   console.log(e);
-//   console.log(" grandparent e.target", e.target);
-//   console.log(" grandparent e.currentTarget", e.currentTarget);
-//   alert("Grand Parent");
-// });
-
-// document.getElementById("grandparent").addEventListener("click", (e) => {
-//   console.log(e);
-//   console.log(" grandparent e.target", e.target);
-//   console.log(" grandparent e.currentTarget", e.currentTarget);
-//   alert("Grand Parent");
-// });
-
-// function addEventListener(callback) {
-//   // callback(event)
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
 // }
 
-// event.target vs event.current target
+// const per = new Person("Vishal");
 
-function handleCard() {
-  window.location =
-    "https://www.zeptonow.com/pn/amul-malai-paneer-fresh/spid/7a496806-ae83-499f-be30-111a416c9a0d?sid=21d42ce9-9a73-428f-89ef-75323784c3b8&pvid=54099eb2-2d08-4013-a822-a3eebc72f19f";
-}
+// Promises
 
-function addButton(e) {
-  e.stopPropagation();
-  if (document.getElementById("buttonadd")?.textContent === "Add") {
-    e.target.innerHTML = `<div  id ='decrement' onclick = ${decrement(
-      event
-    )}> - </div> <div id = 'productcount'>${1}</div> <div  id = 'increment' > + </div>`;
-    document.getElementById("increment").addEventListener("click", increment);
-    document.getElementById("decrement").addEventListener("click", decrement);
-  } else {
-    return 0;
-  }
-  return;
-}
+// one technique to handle async programming in javascript
 
-function increment(e) {
-  if (
-    document.getElementById("increment") &&
-    document.getElementById("increment")?.textContent
-  ) {
-    console.log(e.target.textContent);
-    const count =
-      parseInt(document.getElementById("productcount").textContent) + 1;
-    document.getElementById("productcount").textContent = count;
-  }
-}
+// async  => now and later(i will get the result of this at last)
+// sync => now and now
 
-function decrement(e) {
-  if (parseInt(document.getElementById("productcount")?.textContent) > 1) {
-    e.stopPropagation();
-    if (
-      document.getElementById("increment") &&
-      document.getElementById("increment")?.textContent
-    ) {
-      console.log(e.target.textContent);
-      const count =
-        parseInt(document.getElementById("productcount").textContent) - 1;
-      document.getElementById("productcount").textContent = count;
-    }
-  } else {
-    document.getElementById("buttonadd").textContent = "Add";
-  }
-}
+// event loop => microtask  , macro task  ,  stack , event loop
 
-function checkBoxHandler(e) {
-  e.stopPropagation();
-  e.preventDefault();
-}
+var a = 20;
+console.log(a); // 20
 
-// event delegation
+const callback = () => {
+  var b = 100;
+  console.log(b);
+};
 
-// Array find method  ??
+setTimeout(callback, 1000); // asynchrnous
 
-const array1 = [4, 5, 6, 7, 8, 9, 10];
-// Find is a higher order function
+// earlier before promises we need to handle asyn programming in js using callback
+// callback hell
+// ten thousand of synchrnous javascript code
+// first all synchrnouw code of js will execute once the stack is empty than only   async code will run
 
-const result = array1.find((currentElement, index) => {
-  return currentElement % 2 == 0;
+// Promise => pending , rejected , fulffillled
+
+// how to defined the promises in js
+
+const myPromise = new Promise((fulffillled, rejected) => {
+  // fullfilled and rejected are the functions
+  fulffillled([{ name: "Vishal" }]);
+  rejected("Hey I am rejected"); // this code will not run
 });
 
-console.log(result, "result");
-
-const employee = [
-  {
-    name: "Vishal",
-    id: 1234,
-  },
-  {
-    name: "Visha1111l",
-    id: 1235,
-  },
-  {
-    name: "Vi111111shal",
-    id: 12344,
-  },
-  {
-    name: "Vis1111hal",
-    id: 123333,
-  },
-  {
-    name: "Vi111shal",
-    id: 121113,
-  },
-];
-
-const callback = (employeeObj, index) => {
-  return employeeObj.id === 121113;
-};
-const result1 = employee.find(callback);
-console.log(result1);
-
-// Ways to defined object In JS
-
-// Object Literal
-const obj1 = {
-  a: 2,
-};
-
-// Object constructor
-
-const obj12 = new Object(null);
-
-// Constructor Function
-function Employee(name) {
-  this.name = name;
-}
-
-const emp = new Employee("Vishal");
-
-// Object.create()
-
-const obj11 = Object.create(obj12);
-// obj11 = {};
-// obj11.name ="Vishal"
-
-// class
-
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-}
-
-const per = new Person("Vishal");
+console.log(myPromise, "myPromise");
