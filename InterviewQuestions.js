@@ -639,243 +639,383 @@
 // //   // callback(event)
 // // }
 
-// // event.target vs event.current target
+// // // event.target vs event.current target
 
-// function handleCard() {
-//   window.location =
-//     "https://www.zeptonow.com/pn/amul-malai-paneer-fresh/spid/7a496806-ae83-499f-be30-111a416c9a0d?sid=21d42ce9-9a73-428f-89ef-75323784c3b8&pvid=54099eb2-2d08-4013-a822-a3eebc72f19f";
-// }
+// // function handleCard() {
+// //   window.location =
+// //     "https://www.zeptonow.com/pn/amul-malai-paneer-fresh/spid/7a496806-ae83-499f-be30-111a416c9a0d?sid=21d42ce9-9a73-428f-89ef-75323784c3b8&pvid=54099eb2-2d08-4013-a822-a3eebc72f19f";
+// // }
 
-// function addButton(e) {
-//   e.stopPropagation();
-//   if (document.getElementById("buttonadd")?.textContent === "Add") {
-//     e.target.innerHTML = `<div  id ='decrement' onclick = ${decrement(
-//       event
-//     )}> - </div> <div id = 'productcount'>${1}</div> <div  id = 'increment' > + </div>`;
-//     document.getElementById("increment").addEventListener("click", increment);
-//     document.getElementById("decrement").addEventListener("click", decrement);
-//   } else {
-//     return 0;
-//   }
-//   return;
-// }
+// // function addButton(e) {
+// //   e.stopPropagation();
+// //   if (document.getElementById("buttonadd")?.textContent === "Add") {
+// //     e.target.innerHTML = `<div  id ='decrement' onclick = ${decrement(
+// //       event
+// //     )}> - </div> <div id = 'productcount'>${1}</div> <div  id = 'increment' > + </div>`;
+// //     document.getElementById("increment").addEventListener("click", increment);
+// //     document.getElementById("decrement").addEventListener("click", decrement);
+// //   } else {
+// //     return 0;
+// //   }
+// //   return;
+// // }
 
-// function increment(e) {
-//   if (
-//     document.getElementById("increment") &&
-//     document.getElementById("increment")?.textContent
-//   ) {
-//     console.log(e.target.textContent);
-//     const count =
-//       parseInt(document.getElementById("productcount").textContent) + 1;
-//     document.getElementById("productcount").textContent = count;
-//   }
-// }
+// // function increment(e) {
+// //   if (
+// //     document.getElementById("increment") &&
+// //     document.getElementById("increment")?.textContent
+// //   ) {
+// //     console.log(e.target.textContent);
+// //     const count =
+// //       parseInt(document.getElementById("productcount").textContent) + 1;
+// //     document.getElementById("productcount").textContent = count;
+// //   }
+// // }
 
-// function decrement(e) {
-//   if (parseInt(document.getElementById("productcount")?.textContent) > 1) {
-//     e.stopPropagation();
-//     if (
-//       document.getElementById("increment") &&
-//       document.getElementById("increment")?.textContent
-//     ) {
-//       console.log(e.target.textContent);
-//       const count =
-//         parseInt(document.getElementById("productcount").textContent) - 1;
-//       document.getElementById("productcount").textContent = count;
-//     }
-//   } else {
-//     document.getElementById("buttonadd").textContent = "Add";
-//   }
-// }
+// // function decrement(e) {
+// //   if (parseInt(document.getElementById("productcount")?.textContent) > 1) {
+// //     e.stopPropagation();
+// //     if (
+// //       document.getElementById("increment") &&
+// //       document.getElementById("increment")?.textContent
+// //     ) {
+// //       console.log(e.target.textContent);
+// //       const count =
+// //         parseInt(document.getElementById("productcount").textContent) - 1;
+// //       document.getElementById("productcount").textContent = count;
+// //     }
+// //   } else {
+// //     document.getElementById("buttonadd").textContent = "Add";
+// //   }
+// // }
 
-// function checkBoxHandler(e) {
-//   e.stopPropagation();
-//   e.preventDefault();
-// }
+// // function checkBoxHandler(e) {
+// //   e.stopPropagation();
+// //   e.preventDefault();
+// // }
 
-// // event delegation
+// // // event delegation
 
-// // Array find method  ??
+// // // Array find method  ??
 
-// const array1 = [4, 5, 6, 7, 8, 9, 10];
-// // Find is a higher order function
+// // const array1 = [4, 5, 6, 7, 8, 9, 10];
+// // // Find is a higher order function
 
-// const result = array1.find((currentElement, index) => {
-//   return currentElement % 2 == 0;
+// // const result = array1.find((currentElement, index) => {
+// //   return currentElement % 2 == 0;
+// // });
+
+// // console.log(result, "result");
+
+// // const employee = [
+// //   {
+// //     name: "Vishal",
+// //     id: 1234,
+// //   },
+// //   {
+// //     name: "Visha1111l",
+// //     id: 1235,
+// //   },
+// //   {
+// //     name: "Vi111111shal",
+// //     id: 12344,
+// //   },
+// //   {
+// //     name: "Vis1111hal",
+// //     id: 123333,
+// //   },
+// //   {
+// //     name: "Vi111shal",
+// //     id: 121113,
+// //   },
+// // ];
+
+// // const callback = (employeeObj, index) => {
+// //   return employeeObj.id === 121113;
+// // };
+// // const result1 = employee.find(callback);
+// // console.log(result1);
+
+// // // Ways to defined object In JS
+
+// // // Object Literal
+// // const obj1 = {
+// //   a: 2,
+// // };
+
+// // // Object constructor
+
+// // const obj12 = new Object(null);
+
+// // // Constructor Function
+// // function Employee(name) {
+// //   this.name = name;
+// // }
+
+// // const emp = new Employee("Vishal");
+
+// // // Object.create()
+
+// // const obj11 = Object.create(obj12);
+// // // obj11 = {};
+// // // obj11.name ="Vishal"
+
+// // // class
+
+// // class Person {
+// //   constructor(name) {
+// //     this.name = name;
+// //   }
+// // }
+
+// // const per = new Person("Vishal");
+
+// // Promises
+
+// // one technique to handle async programming in javascript
+
+// // async  => now and later(i will get the result of this at last)
+// // sync => now and now
+
+// // event loop => microtask  , macro task  ,  stack , event loop
+
+// // var a = 20;
+// // console.log(a); // 20
+
+// // const callback2 = (callback3, call4) => {
+// //   setTimeout(() => callback3(call4));
+// // };
+
+// // const callback3 = (call4) => {
+// //   setTimeout(call4);
+// // };
+// // const callback = (callback2, callback3, call4) => {
+// //   setTimeout(() => callback2(callback3, call4));
+// // };
+
+// // setTimeout(callback, 1000); // asynchrnous
+
+// // earlier before promises we need to handle asyn programming in js using callback
+// // callback hell
+// // ten thousand of synchrnous javascript code
+// // first all synchrnouw code of js will execute once the stack is empty than only   async code will run
+
+// // Promise => pending , rejected , fulffillled
+
+// // how to defined the promises in js
+
+// // immediate resolved promise
+// const myPromise = new Promise((fulffillled, rejected) => {
+//   // fullfilled and rejected are the functions
+//   fulffillled("I am punit");
+//   rejected("Hey I am rejected"); // this code will not run
 // });
 
-// console.log(result, "result");
+// console.log(myPromise, "myPromise");
 
-// const employee = [
-//   {
-//     name: "Vishal",
-//     id: 1234,
-//   },
-//   {
-//     name: "Visha1111l",
-//     id: 1235,
-//   },
-//   {
-//     name: "Vi111111shal",
-//     id: 12344,
-//   },
-//   {
-//     name: "Vis1111hal",
-//     id: 123333,
-//   },
-//   {
-//     name: "Vi111shal",
-//     id: 121113,
-//   },
-// ];
+// // function fetch () {
+// // // firts xmlhhtprequest
+// // // server response
+// // // server response code
+// // // serverResponseData
+// // return new Promise((resolved , rejected)=>{
+// // if(serverResponseData.success) {
+// //   resolved(serverResponseData)
+// // } else {
+// //   rejected(serverResponseData)
+// // }
+// // })
 
-// const callback = (employeeObj, index) => {
-//   return employeeObj.id === 121113;
+// // }
+
+// const mp1 = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     console.log("Hey");
+//     rejected("After 2 seconds rejected");
+//     resolved("After 2 seconds resolved");
+//   }, 2000);
+// });
+
+// console.log("mp1", mp1); //
+
+// // setTimeout(() => {
+// //   console.log("after 3 seconds mp1", mp1); //
+// // }, 3000);
+
+// // promise chaining then and catch
+// // then is higher order function which takes two parameter first parameter is function which will be executed if
+// // promise is resolved
+// // Second parameter is also function which will execute if promise is rejected
+// // catch will take one parameter which is function which will be executed if the promise is rejected
+
+// const success = (res) => {
+//   console.log("then catching", res);
 // };
-// const result1 = employee.find(callback);
-// console.log(result1);
 
-// // Ways to defined object In JS
-
-// // Object Literal
-// const obj1 = {
-//   a: 2,
+// const error = (error) => {
+//   console.log("error", error);
 // };
+// // mp1.then(success,error);// this approac recommended
 
-// // Object constructor
+// mp1
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((error) => {
+//     console.log("error::", error);
+//   });
+// // mp1.then(success).catch(error);
 
-// const obj12 = new Object(null);
+// // async and await which is also use for getting result from the promises
+// // if you want to use await that should be inside the async function
 
-// // Constructor Function
-// function Employee(name) {
-//   this.name = name;
-// }
-
-// const emp = new Employee("Vishal");
-
-// // Object.create()
-
-// const obj11 = Object.create(obj12);
-// // obj11 = {};
-// // obj11.name ="Vishal"
-
-// // class
-
-// class Person {
-//   constructor(name) {
-//     this.name = name;
+// async function getPromise() {
+//   try {
+//     const data = await mp1;
+//     console.log("data", data);
+//   } catch (error) {
+//     console.log("error123", error);
 //   }
 // }
 
-// const per = new Person("Vishal");
+// console.log("async function", getPromise());
 
-// Promises
+// //
 
-// one technique to handle async programming in javascript
-
-// async  => now and later(i will get the result of this at last)
-// sync => now and now
-
-// event loop => microtask  , macro task  ,  stack , event loop
-
-// var a = 20;
-// console.log(a); // 20
-
-// const callback2 = (callback3, call4) => {
-//   setTimeout(() => callback3(call4));
+// // Calling get api  fetch and resolving promise using promise chaining
+// const getUser = async () => {
+//   // https://dummyjson.com/users
+//   // fetch is method provided by the browser
+//   // than how can i access the browser api
+//   // you can access that using window.fetch()  or fetch () because window is middleware b/w browser and the javascript
+//   // window attached all the wbe api in it object
+//   // the kye attached with window can be acces directly without using window
+//   // by default method of fetch is GET
+//   // 404 NOT FOUND MEANS ADDRESS NOT FOUND  OR    METHOD IS INVALID OR URL IS INVALID OR THAT URL DOES NOT EXISTS
+//   // fetch("https://dummyjson.com/users?limit=101", {
+//   //   method: "GET",
+//   //   headers: { projectId: "VISHAKL" },
+//   // }).then((res) => {
+//   //   res.json().then((result) => {
+//   //     console.log(result);
+//   //   });
+//   // });
+//   try {
+//     const res = await fetch("https://dummyjson.com/users");
+//     const result = await res.json();
+//     console.log(result);
+//   } catch (error) {}
 // };
 
-// const callback3 = (call4) => {
-//   setTimeout(call4);
+// // Add => Post
+// // Updated => PUT
+// // GET => GET
+// // DELETE => DELETE
+
+// const getSingleUser = () => {
+//   fetch("https://dummyjson.com/users/101").then((res) => {
+//     res.json().then((result) => {
+//       console.log(result);
+//     });
+//   });
 // };
-// const callback = (callback2, callback3, call4) => {
-//   setTimeout(() => callback2(callback3, call4));
+
+// const addNewUsers = () => {
+//   const body = {
+//     firstName: "Vishal",
+//     lastName: "Sharma",
+//     age: 26,
+//   };
+//   fetch("https://dummyjson.com/users/add", {
+//     method: "POST",
+//     body: JSON.stringify(body),
+//   }).then((res) => {
+//     res.json().then((result) => {
+//       console.log(result);
+//       getUser();
+//       getSingleUser();
+//     });
+//   });
 // };
+// addNewUsers();
 
-// setTimeout(callback, 1000); // asynchrnous
+// async functions
 
-// earlier before promises we need to handle asyn programming in js using callback
-// callback hell
-// ten thousand of synchrnous javascript code
-// first all synchrnouw code of js will execute once the stack is empty than only   async code will run
+// async normal
 
-// Promise => pending , rejected , fulffillled
-
-// how to defined the promises in js
-
-// immediate resolved promise
-const myPromise = new Promise((fulffillled, rejected) => {
-  // fullfilled and rejected are the functions
-  fulffillled("I am punit");
-  rejected("Hey I am rejected"); // this code will not run
-});
-
-console.log(myPromise, "myPromise");
-
-// function fetch () {
-// // firts xmlhhtprequest
-// // server response
-// // server response code
-// // serverResponseData
-// return new Promise((resolved , rejected)=>{
-// if(serverResponseData.success) {
-//   resolved(serverResponseData)
-// } else {
-//   rejected(serverResponseData)
+// async function Async() {
+//   // return "I am cool";
+//   return new Promise((resolved) => {
+//     resolved("Hey");
+//   });
 // }
-// })
 
-// }
+// console.log(Async());
 
-const mp1 = new Promise((resolved, rejected) => {
+// Async().then((res) => {
+//   console.log("HEY I AM VALUE::=>", res);
+// });
+
+// const myPromise = new Promise((resolved, rejected) => {
+//   resolved("Hey i am resolved naa...");
+// });
+
+// Polyfill for Promise.all()
+
+const allp = new Promise((resolved, rejected) => {
   setTimeout(() => {
-    console.log("Hey");
-    rejected("After 2 seconds rejected");
-    resolved("After 2 seconds resolved");
-  }, 2000);
+    resolved("Promis1");
+  });
+});
+const allp1 = new Promise((resolved, rejected) => {
+  setTimeout(() => {
+    resolved("Promise2");
+  });
+});
+const allp2 = new Promise((resolved, rejected) => {
+  setTimeout(() => {
+    resolved("Promise3");
+  });
+});
+//It takes the array of promises and if all the promises are fullfilled it returns the promise  with the result array of result corresponding to the that promise (fullfilled)
+
+var allResult = Promise.all([allp, allp1, allp2]);
+
+// allResult.then((res) => {
+//   console.log(res, "Promise all result");
+// });
+
+// If any of the promises passed in the array are rejected than promisea.all will immediately reject the promise and return the promise with the value corressponding to the that promise
+// It will not run to next promise
+
+const pr = new Promise((resolved, rejected) => {
+  setTimeout(() => {
+    rejected("Rejected Promis1");
+  });
+});
+const pres0 = new Promise((resolved, rejected) => {
+  setTimeout(() => {
+    resolved("Promise2");
+  });
+});
+const pres1 = new Promise((resolved, rejected) => {
+  setTimeout(() => {
+    resolved("Promise3");
+  });
 });
 
-console.log("mp1", mp1); //
+allResult = Promise.all([pr, pres0, pres1]);
 
-// setTimeout(() => {
-//   console.log("after 3 seconds mp1", mp1); //
-// }, 3000);
+console.log("rejected case 1::", allResult);
 
-// promise chaining then and catch
-// then is higher order function which takes two parameter first parameter is function which will be executed if
-// promise is resolved
-// Second parameter is also function which will execute if promise is rejected
-// catch will take one parameter which is function which will be executed if the promise is rejected
+allResult = Promise.all([pres0, pres1, pr]);
 
-const success = (res) => {
-  console.log("then catching", res);
-};
+console.log("rejected case 2::", allResult);
 
-const error = (error) => {
-  console.log("error", error);
-};
-// mp1.then(success,error);// this approac recommended
-
-mp1
-  .then((res) => {
-    console.log(res);
-  })
+allResult
+  .then(() => {})
   .catch((error) => {
     console.log("error::", error);
   });
-// mp1.then(success).catch(error);
 
-// async and await which is also use for getting result from the promises
-// if you want to use await that should be inside the async function
-
-async function getPromise() {
-  try {
-    const data = await mp1;
-    console.log("data", data);
-  } catch (error) {
-    console.log("error123", error);
-  }
-}
-
-console.log("async function", getPromise());
+Promise.myall([]);
