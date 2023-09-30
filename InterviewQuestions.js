@@ -1068,25 +1068,22 @@ console.log("allsettled", allResult);
 
 // ignore need to fixed this
 Promise.myallSettled = function (promises) {
-  //[1,2,3,4,5]
-  // then function can be only applicable for the promise prototype
   const result = [];
   return new Promise((resolved, rejected) => {
     promises.forEach((promise, index) => {
       if (promise && typeof promise.then === "function") {
         promise
           .then((res) => {
-            result[index] = res;
+            result[index] = { status: "fullfilled", value: res };
             if (index === promises.length - 1) {
               resolved(result);
             }
-            // we want to resolved this promise if all the promise are resolved
           })
           .catch((error) => {
-            result[index] = res;
+            result[index] = { status: "rejected", reason: error };
           });
       } else {
-        result[index] = promise;
+        result[index] = { status: "fullfilled", value: promise };
         if (index === promises.length - 1) {
           resolved(result);
         }
@@ -1094,3 +1091,6 @@ Promise.myallSettled = function (promises) {
     });
   });
 };
+
+allResult = Promise.allSettled([pr, pres0, pres1]);
+console.log("allsettled", allResult);
