@@ -1036,7 +1036,7 @@ Promise.myall = function (promises) {
             // we want to resolved this promise if all the promise are resolved
           })
           .catch((error) => {
-            rejected(error);
+            result[index] = res;
           });
       } else {
         result[index] = promise;
@@ -1057,3 +1057,40 @@ const dataall = Promise.all([1, 2, 3, 4]);
 
 console.log("dataall", dataall);
 console.log("data", data);
+
+//list  => and your requirement is that if all api is success than i will do something
+
+// Promise.allSettled();
+
+// go through all the promise it does not care about the reject and resolved it will always return the promise with fullfilled state
+allResult = Promise.allSettled([pr, pres0, pres1]);
+console.log("allsettled", allResult);
+
+// ignore need to fixed this
+Promise.myallSettled = function (promises) {
+  //[1,2,3,4,5]
+  // then function can be only applicable for the promise prototype
+  const result = [];
+  return new Promise((resolved, rejected) => {
+    promises.forEach((promise, index) => {
+      if (promise && typeof promise.then === "function") {
+        promise
+          .then((res) => {
+            result[index] = res;
+            if (index === promises.length - 1) {
+              resolved(result);
+            }
+            // we want to resolved this promise if all the promise are resolved
+          })
+          .catch((error) => {
+            result[index] = res;
+          });
+      } else {
+        result[index] = promise;
+        if (index === promises.length - 1) {
+          resolved(result);
+        }
+      }
+    });
+  });
+};
