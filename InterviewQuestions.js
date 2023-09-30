@@ -1021,20 +1021,29 @@ allResult
 // Promise.myall([]);
 
 Promise.myall = function (promises) {
+  //[1,2,3,4,5]
+  // then function can be only applicable for the promise prototype
   const result = [];
   return new Promise((resolved, rejected) => {
     promises.forEach((promise, index) => {
-      promise
-        .then((res) => {
-          result[index] = res;
-          if (index === promises.length - 1) {
-            resolved(result);
-          }
-          // we want to resolved this promise if all the promise are resolved
-        })
-        .catch((error) => {
-          rejected(error);
-        });
+      if (promise && typeof promise.then === "function") {
+        promise
+          .then((res) => {
+            result[index] = res;
+            if (index === promises.length - 1) {
+              resolved(result);
+            }
+            // we want to resolved this promise if all the promise are resolved
+          })
+          .catch((error) => {
+            rejected(error);
+          });
+      } else {
+        result[index] = promise;
+        if (index === promises.length - 1) {
+          resolved(result);
+        }
+      }
     });
   });
 };
@@ -1044,5 +1053,7 @@ allResult = Promise.all([pres0, pres1, pr]);
 console.log("rejected my all case 2::", allResult);
 
 const data = Promise.myall([1, 2, 3, 4]);
+const dataall = Promise.all([1, 2, 3, 4]);
 
+console.log("dataall", dataall);
 console.log("data", data);
