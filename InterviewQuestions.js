@@ -1094,3 +1094,42 @@ Promise.myallSettled = function (promises) {
 
 allResult = Promise.allSettled([pr, pres0, pres1]);
 console.log("allsettled", allResult);
+
+// Home
+// 4 => 3  success , one is rejected
+
+// Flat the given object
+
+const flattenObject = (nestedObject) => {};
+
+const object = {
+  name: "Vishal",
+  address: {
+    city: {
+      name: "Kanpur",
+    },
+  },
+  education: {
+    year: 2020,
+  },
+  orgInfo: {
+    orgId: 123,
+    orgName: "something",
+    adress: {
+      city: {
+        name: "bangalore",
+      },
+    },
+  },
+};
+
+const result = flattenObject(object);
+
+// result ={
+//     name: 'Vishal',
+//     adress.city.name: 'kanpur',
+//     education.year: 2020,
+//     orgInfo.orgId:123,
+//     orgInfo.orgName:something,
+//     orgInfo.adress.city.name:'Bangalore',
+// }
