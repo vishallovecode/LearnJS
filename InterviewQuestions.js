@@ -1122,10 +1122,10 @@ const object = {
     },
   },
 };
-
 console.log("object", { ...object });
-
 const result = flattenObject(object);
+
+// recursion
 
 // result ={
 //     name: 'Vishal',
@@ -1148,18 +1148,28 @@ const renderProductCard = (productList) => {
   const productContainer = document.getElementById("productContainer");
   // list of product
   for (let i = 0; i < productList.length; i++) {
+    [];
     const div = document.createElement("div");
-    div.innerHTML = card(productList[i]);
+    div.innerHTML = card(productList[i]); //
     productContainer.appendChild(div);
   }
 };
 
+const loader = document.getElementById("loader");
 const fetchProducts = async () => {
   // fetch method provided by browser web api
   // we know that fetch api return the promises
+  loader.style.display = "block";
   const res = await fetch("https://dummyjson.com/products");
   const data = await res.json();
   renderProductCard(data.products);
+  loader.style.display = "none";
 };
 
 fetchProducts();
+
+// [3,[4,[6,[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[2]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+// [3,4,6,2]
+
+// Create memoize function
+// what is memoization  , what is memoize function ? than write your own memoize
