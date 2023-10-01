@@ -1100,7 +1100,25 @@
 
 // Flat the given object
 
-const flattenObject = (nestedObject) => {};
+// null  ,undefined , '' //
+let result1 = {};
+const flattenObject = (nestedObject, parentKey) => {
+  if (nestedObject && typeof nestedObject != "object") {
+    return;
+  }
+  for (let key in nestedObject) {
+    const key2 = parentKey ? `${parentKey}.${key}` : key;
+    if (typeof nestedObject[key] != "object") {
+      result1[key2] = nestedObject[key];
+    } else {
+      flattenObject(nestedObject[key], key2);
+    }
+  }
+  return result1;
+};
+// flattenObject({ name: "Vishal", city: "chitrakoot" });
+
+// const a = {}; a?.name?.hello // undefined
 
 const object = {
   name: "Vishal",
@@ -1122,8 +1140,9 @@ const object = {
     },
   },
 };
-console.log("object", { ...object });
-const result = flattenObject(object);
+
+const result = flattenObject(object, "");
+console.log("result bhi sath me", result);
 
 // recursion
 
@@ -1173,3 +1192,24 @@ fetchProducts();
 
 // Create memoize function
 // what is memoization  , what is memoize function ? than write your own memoize
+
+// typeof nestedObject != "object"
+
+// i want to check whether given variable is object or not?
+// lets consider the variable name  is  todayClass
+
+// function checkType(a) {
+//   if (a && typeof a === "object" && !Array.isArray(a)) {
+//     console.log(true);
+//   } else {
+//     console.log(false);
+//   }
+// }
+
+// checkType(1); // false
+// checkType("hello"); // false
+// checkType({}); // true
+// checkType([]); // false
+// checkType(null); // false typeof null === object
+
+// for in and for of what is difference ??
