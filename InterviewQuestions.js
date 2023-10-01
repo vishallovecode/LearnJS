@@ -952,148 +952,148 @@
 
 // console.log(Async());
 
-// Async().then((res) => {
-//   console.log("HEY I AM VALUE::=>", res);
+// // Async().then((res) => {
+// //   console.log("HEY I AM VALUE::=>", res);
+// // });
+
+// // const myPromise = new Promise((resolved, rejected) => {
+// //   resolved("Hey i am resolved naa...");
+// // });
+
+// // Polyfill for Promise.all()
+
+// const allp = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     resolved("Promis1");
+//   });
+// });
+// const allp1 = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     resolved("Promise2");
+//   });
+// });
+// const allp2 = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     resolved("Promise3");
+//   });
+// });
+// //It takes the array of promises and if all the promises are fullfilled it returns the promise  with the result array of result corresponding to the that promise (fullfilled)
+
+// var allResult = Promise.all([allp, allp1, allp2]);
+
+// // allResult.then((res) => {
+// //   console.log(res, "Promise all result");
+// // });
+
+// // If any of the promises passed in the array are rejected than promisea.all will immediately reject the promise and return the promise with the value corressponding to the that promise
+// // It will not run to next promise
+
+// const pr = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     rejected("Rejected Promis1");
+//   });
+// });
+// const pres0 = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     resolved("Promise2");
+//   });
+// });
+// const pres1 = new Promise((resolved, rejected) => {
+//   setTimeout(() => {
+//     resolved("Promise3");
+//   });
 // });
 
-// const myPromise = new Promise((resolved, rejected) => {
-//   resolved("Hey i am resolved naa...");
-// });
+// allResult = Promise.all([pr, pres0, pres1]);
 
-// Polyfill for Promise.all()
+// console.log("rejected case 1::", allResult);
 
-const allp = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    resolved("Promis1");
-  });
-});
-const allp1 = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    resolved("Promise2");
-  });
-});
-const allp2 = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    resolved("Promise3");
-  });
-});
-//It takes the array of promises and if all the promises are fullfilled it returns the promise  with the result array of result corresponding to the that promise (fullfilled)
+// allResult = Promise.all([pres0, pres1, pr]);
 
-var allResult = Promise.all([allp, allp1, allp2]);
+// console.log("rejected case 2::", allResult);
 
-// allResult.then((res) => {
-//   console.log(res, "Promise all result");
-// });
+// allResult
+//   .then(() => {})
+//   .catch((error) => {
+//     console.log("error::", error);
+//   });
 
-// If any of the promises passed in the array are rejected than promisea.all will immediately reject the promise and return the promise with the value corressponding to the that promise
-// It will not run to next promise
+// // Promise.myall([]);
 
-const pr = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    rejected("Rejected Promis1");
-  });
-});
-const pres0 = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    resolved("Promise2");
-  });
-});
-const pres1 = new Promise((resolved, rejected) => {
-  setTimeout(() => {
-    resolved("Promise3");
-  });
-});
+// Promise.myall = function (promises) {
+//   //[1,2,3,4,5]
+//   // then function can be only applicable for the promise prototype
+//   const result = [];
+//   return new Promise((resolved, rejected) => {
+//     promises.forEach((promise, index) => {
+//       if (promise && typeof promise.then === "function") {
+//         promise
+//           .then((res) => {
+//             result[index] = res;
+//             if (index === promises.length - 1) {
+//               resolved(result);
+//             }
+//             // we want to resolved this promise if all the promise are resolved
+//           })
+//           .catch((error) => {
+//             result[index] = res;
+//           });
+//       } else {
+//         result[index] = promise;
+//         if (index === promises.length - 1) {
+//           resolved(result);
+//         }
+//       }
+//     });
+//   });
+// };
+// allResult = Promise.myall([pr, pres0, pres1]);
+// console.log("rejected myall case 1::", allResult);
+// allResult = Promise.all([pres0, pres1, pr]);
+// console.log("rejected my all case 2::", allResult);
 
-allResult = Promise.all([pr, pres0, pres1]);
+// const data = Promise.myall([1, 2, 3, 4]);
+// const dataall = Promise.all([1, 2, 3, 4]);
 
-console.log("rejected case 1::", allResult);
+// console.log("dataall", dataall);
+// console.log("data", data);
 
-allResult = Promise.all([pres0, pres1, pr]);
+// //list  => and your requirement is that if all api is success than i will do something
 
-console.log("rejected case 2::", allResult);
+// // Promise.allSettled();
 
-allResult
-  .then(() => {})
-  .catch((error) => {
-    console.log("error::", error);
-  });
+// // go through all the promise it does not care about the reject and resolved it will always return the promise with fullfilled state
+// allResult = Promise.allSettled([pr, pres0, pres1]);
+// console.log("allsettled", allResult);
 
-// Promise.myall([]);
+// // ignore need to fixed this
+// Promise.myallSettled = function (promises) {
+//   const result = [];
+//   return new Promise((resolved, rejected) => {
+//     promises.forEach((promise, index) => {
+//       if (promise && typeof promise.then === "function") {
+//         promise
+//           .then((res) => {
+//             result[index] = { status: "fullfilled", value: res };
+//             if (index === promises.length - 1) {
+//               resolved(result);
+//             }
+//           })
+//           .catch((error) => {
+//             result[index] = { status: "rejected", reason: error };
+//           });
+//       } else {
+//         result[index] = { status: "fullfilled", value: promise };
+//         if (index === promises.length - 1) {
+//           resolved(result);
+//         }
+//       }
+//     });
+//   });
+// };
 
-Promise.myall = function (promises) {
-  //[1,2,3,4,5]
-  // then function can be only applicable for the promise prototype
-  const result = [];
-  return new Promise((resolved, rejected) => {
-    promises.forEach((promise, index) => {
-      if (promise && typeof promise.then === "function") {
-        promise
-          .then((res) => {
-            result[index] = res;
-            if (index === promises.length - 1) {
-              resolved(result);
-            }
-            // we want to resolved this promise if all the promise are resolved
-          })
-          .catch((error) => {
-            result[index] = res;
-          });
-      } else {
-        result[index] = promise;
-        if (index === promises.length - 1) {
-          resolved(result);
-        }
-      }
-    });
-  });
-};
-allResult = Promise.myall([pr, pres0, pres1]);
-console.log("rejected myall case 1::", allResult);
-allResult = Promise.all([pres0, pres1, pr]);
-console.log("rejected my all case 2::", allResult);
-
-const data = Promise.myall([1, 2, 3, 4]);
-const dataall = Promise.all([1, 2, 3, 4]);
-
-console.log("dataall", dataall);
-console.log("data", data);
-
-//list  => and your requirement is that if all api is success than i will do something
-
-// Promise.allSettled();
-
-// go through all the promise it does not care about the reject and resolved it will always return the promise with fullfilled state
-allResult = Promise.allSettled([pr, pres0, pres1]);
-console.log("allsettled", allResult);
-
-// ignore need to fixed this
-Promise.myallSettled = function (promises) {
-  const result = [];
-  return new Promise((resolved, rejected) => {
-    promises.forEach((promise, index) => {
-      if (promise && typeof promise.then === "function") {
-        promise
-          .then((res) => {
-            result[index] = { status: "fullfilled", value: res };
-            if (index === promises.length - 1) {
-              resolved(result);
-            }
-          })
-          .catch((error) => {
-            result[index] = { status: "rejected", reason: error };
-          });
-      } else {
-        result[index] = { status: "fullfilled", value: promise };
-        if (index === promises.length - 1) {
-          resolved(result);
-        }
-      }
-    });
-  });
-};
-
-allResult = Promise.allSettled([pr, pres0, pres1]);
-console.log("allsettled", allResult);
+// allResult = Promise.allSettled([pr, pres0, pres1]);
+// console.log("allsettled", allResult);
 
 // Home
 // 4 => 3  success , one is rejected
@@ -1123,6 +1123,8 @@ const object = {
   },
 };
 
+console.log("object", { ...object });
+
 const result = flattenObject(object);
 
 // result ={
@@ -1133,3 +1135,31 @@ const result = flattenObject(object);
 //     orgInfo.orgName:something,
 //     orgInfo.adress.city.name:'Bangalore',
 // }
+
+/// Displaying data  into ui after fetching from server
+
+const card = (product) => {
+  return `<div style ="border:2px solid red; padding:20px">
+  <h2>${product.title}</h2>
+  </div>`;
+};
+
+const renderProductCard = (productList) => {
+  const productContainer = document.getElementById("productContainer");
+  // list of product
+  for (let i = 0; i < productList.length; i++) {
+    const div = document.createElement("div");
+    div.innerHTML = card(productList[i]);
+    productContainer.appendChild(div);
+  }
+};
+
+const fetchProducts = async () => {
+  // fetch method provided by browser web api
+  // we know that fetch api return the promises
+  const res = await fetch("https://dummyjson.com/products");
+  const data = await res.json();
+  renderProductCard(data.products);
+};
+
+fetchProducts();
