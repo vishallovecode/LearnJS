@@ -1,7 +1,7 @@
 
 
 // this and function => object
-
+// in constructor function this will initaly point out to the empty object
 
 // string literal
 const em1 = {
