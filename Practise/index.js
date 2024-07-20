@@ -31,8 +31,28 @@
 // So we can say all variable are hoisted like let var , const and function , var and function are accessible befoe declaration
 // let and const are not accessible before declaration because they are in tdz for that time.
 
-call()
+// call()
 
-function call (){
-  console.log("Hey chill")
+// function call (){
+//   console.log("Hey chill")
+// }
+
+
+
+
+let d =40;
+
+var c=90;
+
+function printName(){
+  let name = 'Vishal'
+  let lastName= "Sharma"
+  console.log(c)
+  console.log(name , lastName)
 }
+
+
+printName();
+
+
+console.log(d)
