@@ -218,25 +218,25 @@ secondFunction();
 // success
 // 230
 
-// const promise = new Promise((resolve, reject) => {
-//     console.log(1);
-//     setTimeout(() => {
-//       console.log("timerStart");
-//       resolve("success");
-//       console.log("timerEnd");
-//     }, 10);
-//     console.log(2);
-//   });
+const promise = new Promise((resolve, reject) => {
+    console.log(1);
+    setTimeout(() => {
+      console.log("timerStart");
+      resolve("success");
+      console.log("timerEnd");
+    }, 10);
+    console.log(2);
+  });
 
-//   promise.then((res) => {
-//     console.log(res);
-//   });
+  promise.then((res) => {
+    console.log(res);
+  });
 
-//   setTimeout(()=>{
-//     console.log("Are!!")
-//   } ,0)
+  setTimeout(()=>{
+    console.log("Are!!")
+  } ,0)
 
-//   console.log(4);
+  console.log(4);
 
 // const timer1 = setTimeout(() => {
 //     console.log('timer1')
@@ -279,28 +279,28 @@ Promise.resolve().then(function B() {
 
 console.log("end");
 
-const promise = new Promise(function C(resolve, reject) {
-  Date1.jsconsole.log(1);
+  const promise = new Promise(function C(resolve, reject) {
+      console.log(1);
 
-  setTimeout(function D() {
-    console.log("timerStart");
+    setTimeout(function D() {
+      console.log("timerStart");
 
-    resolve("success"); //
+      resolve("success"); //
 
-    console.log("timerEnd");
+      console.log("timerEnd");
+    }, 0);
+
+    console.log(2);
+  });
+
+  promise.then(function f(res) {
+    console.log(res);
+  });
+
+  setTimeout(function E() {
+    console.log("Are!!");
   }, 0);
-
-  console.log(2);
-});
-
-promise.then(function f(res) {
-  console.log(res);
-});
-
-setTimeout(function E() {
-  console.log("Are!!");
-}, 0);
-console.log(4);
+  console.log(4);
 
 // start end 1 2 3 4 resolve settimeout timerstart timerend success are
 // start end 4 resolve 1 2 setTimeout are timestart timend success
@@ -362,3 +362,133 @@ console.log(4);
 // timer end
 //success
 // are
+
+
+var a =20;
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+console.log(a)
+
+ const d =30;  // tdz zone
+
+
+
+
+
+ // dom => docment obejct model => web api
+ // We can access dom in javascript
+
+
+ // part of browser
+// window  =>window => => global object
+document.getElementById();
+
+ var a =60;
+
+
+ console.log(window.a) // 60 // browser

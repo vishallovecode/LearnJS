@@ -33,3 +33,29 @@ console.log(b);
 
 // var global you can acces before declaratuon
 // let and const you cannot access before declaration deu to tdz
+
+
+
+function increment (){
+    let count = 0;
+    return function () {
+        let count =0;
+     console.log(count++)
+    }
+}
+const func = increment();
+
+func(); //0
+func(); // 1
+func(); // 2
+
+
+const obj = {
+  firstName: 'Hey',
+  getName() {
+      console.log(this.firstName)
+  }
+}
+
+
+const func = obj.getName
