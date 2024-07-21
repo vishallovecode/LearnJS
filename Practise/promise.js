@@ -15,6 +15,7 @@ const pr1 = new Promise((resolved , rejected)=>{
  // argument we pass inside this function will become the result of this promise
  setTimeout(()=>{
   resolved('Hey I am successfully resolved:33000')
+  
  }, 2000)
 
 
@@ -24,12 +25,6 @@ const pr1 = new Promise((resolved , rejected)=>{
 
  // If do not call any of the these two function your promise will be always in pending
 });
-
-
-
-
-
-
 
 pr1.then((res)=>{
  // this area will be executed if there is promise fullfilled case
