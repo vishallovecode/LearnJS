@@ -86,21 +86,30 @@
 // async and await  
 // this is use for resolving the promise
 
-function fetchData() {
+async function fetchData() {
   // fetch return the promise
- fetch('https://dummyjson.com/products').then((res)=>{
-  // res is not in json type
-  return res.json(); // this will also return the promise
- }).then((result)=>{
-  console.log(result)
- }).catch((error)=>{
-  console.log('api', error)
- });
+//  fetch('https://dummyjson.com/products').then((res)=>{
+//   // res is not in json type
+//   return res.json(); // this will also return the promise
+//  }).then((result)=>{
+//   console.log(result) //  jab apka promise resolved
+//  }).catch((error)=>{
+//   console.log('api', error)
+//  });
+
+//
+//  console.log('raja.....')
+
+const data  =  await fetch('https://dummyjson.com/products');
+const result  = await  data.json();
+console.log(result) 
+console.log('hey')
 
 }
-
-
 fetchData()
+
+
+
 
 
 // function fetch(url) {
@@ -117,4 +126,27 @@ fetchData()
 // }
   
   
-  
+  // const promiseAll = Promise.all([Promise.resolve(1),Promise.resolve(2),Promise.resolve(2),Promise.resolve(4) , Promise.reject('3')])
+
+
+  // promiseAll.then((res)=>{
+  //   console.log('Promise all success' , res)
+  // }).catch((error)=>{
+  //   console.log('Promise all: error' , error)
+  // })
+
+const promise1 = Promise.resolve('Promise 1 resolved');
+
+const promise2 = Promise.reject('Promise 2 rejected');
+
+const promise3 = Promise.resolve('Promise 3 resolved');
+
+Promise.all([promise1, promise2, promise3])
+.then((values) => {
+ console.log('All promises resolved:', values);
+}).catch((error) => {
+    console.error('One of the promises rejected:', error);
+});
+
+
+
