@@ -74,3 +74,11 @@ function outer(){
 const func  = outer();
 
 func();
+
+// What is hoisting ,
+// Lexical scope
+// Global execution context
+// Function execution context 
+// Local Scope
+// Global scope
+// Callstack
