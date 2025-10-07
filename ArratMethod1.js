@@ -131,8 +131,7 @@ console.log(names);
 
 let message = ""; // Hey Vishal  Aryan , rahul , ram your kra is pending
 
-// template
-//  message = 'Hey ' + names + ' your kra is pending';
+
 message = `Hey ${names} Your Kra is pending`;
 console.log(message);
 
